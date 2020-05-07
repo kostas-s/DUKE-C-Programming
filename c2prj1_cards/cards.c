@@ -36,7 +36,6 @@ const char * ranking_to_string(hand_ranking_t r) {
   }
 
 char value_letter(card_t c) {
-  printf("value in decimal is: %d\n",c.value);
   switch(c.value){
   case 2: return '2';
   case 3: return '3';
