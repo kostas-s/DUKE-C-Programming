@@ -1,0 +1,27 @@
+Grading at Thu May  7 15:10:42 UTC 2020
+Attempting to compile retirement.c
+Checking for struct _retire_info
+Found on line 4, column 1 
+Checking for field int months
+Found on line 5, column 3 
+Checking for field double contribution
+Found on line 6, column 3 
+Checking for field double rate_of_return
+Found on line 7, column 3 
+Checking for typedef of struct _retire_info to retire_info
+Found on line 9, column 1 
+Checking for void retirement (int startAge, double initial,  retire_info working,  retire_info retired)
+Found on line 17, column 1 
+Checking for int main(void)
+Found on line 48, column 1 
+Trying to run retirement calculator..
+Your file matched the expected output
+Removing your main() and replacing it with our own to run more tests...
+temp2.c: In function ‘_old_removed_main_’:
+temp2.c:58:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+Could not replace your main function to test further
+
+Overall Grade: C
