@@ -1,0 +1,218 @@
+Grading at Thu May  7 22:21:12 UTC 2020
+Compiling cards.c
+Testing card_from_letters
+Passed
+Testing value_letter and suit_letter
+value in decimal is: 13
+value in decimal is: 13
+value in decimal is: 13
+value in decimal is: 13
+value in decimal is: 14
+value in decimal is: 14
+value in decimal is: 14
+value in decimal is: 14
+value in decimal is: 2
+value in decimal is: 2
+value in decimal is: 2
+value in decimal is: 2
+value in decimal is: 3
+value in decimal is: 3
+value in decimal is: 3
+value in decimal is: 3
+value in decimal is: 4
+value in decimal is: 4
+value in decimal is: 4
+value in decimal is: 4
+value in decimal is: 5
+value in decimal is: 5
+value in decimal is: 5
+value in decimal is: 5
+value in decimal is: 6
+value in decimal is: 6
+value in decimal is: 6
+value in decimal is: 6
+value in decimal is: 7
+value in decimal is: 7
+value in decimal is: 7
+value in decimal is: 7
+value in decimal is: 8
+value in decimal is: 8
+value in decimal is: 8
+value in decimal is: 8
+value in decimal is: 9
+value in decimal is: 9
+value in decimal is: 9
+value in decimal is: 9
+value in decimal is: 10
+value in decimal is: 10
+value in decimal is: 10
+value in decimal is: 10
+value in decimal is: 11
+value in decimal is: 11
+value in decimal is: 11
+value in decimal is: 11
+value in decimal is: 12
+value in decimal is: 12
+value in decimal is: 12
+value in decimal is: 12
+Passed
+Testing print_card
+Your print_card does not work the way I expect:
+value in decimal is: 13
+card input is: Ks
+
+value in decimal is: 13
+card input is: Kh
+
+value in decimal is: 13
+card input is: Kd
+
+value in decimal is: 13
+card input is: Kc
+
+value in decimal is: 14
+card input is: As
+
+value in decimal is: 14
+card input is: Ah
+
+value in decimal is: 14
+card input is: Ad
+
+value in decimal is: 14
+card input is: Ac
+
+value in decimal is: 2
+card input is: 2s
+
+value in decimal is: 2
+card input is: 2h
+
+value in decimal is: 2
+card input is: 2d
+
+value in decimal is: 2
+card input is: 2c
+
+value in decimal is: 3
+card input is: 3s
+
+value in decimal is: 3
+card input is: 3h
+
+value in decimal is: 3
+card input is: 3d
+
+value in decimal is: 3
+card input is: 3c
+
+value in decimal is: 4
+card input is: 4s
+
+value in decimal is: 4
+card input is: 4h
+
+value in decimal is: 4
+card input is: 4d
+
+value in decimal is: 4
+card input is: 4c
+
+value in decimal is: 5
+card input is: 5s
+
+value in decimal is: 5
+card input is: 5h
+
+value in decimal is: 5
+card input is: 5d
+
+value in decimal is: 5
+card input is: 5c
+
+value in decimal is: 6
+card input is: 6s
+
+value in decimal is: 6
+card input is: 6h
+
+value in decimal is: 6
+card input is: 6d
+
+value in decimal is: 6
+card input is: 6c
+
+value in decimal is: 7
+card input is: 7s
+
+value in decimal is: 7
+card input is: 7h
+
+value in decimal is: 7
+card input is: 7d
+
+value in decimal is: 7
+card input is: 7c
+
+value in decimal is: 8
+card input is: 8s
+
+value in decimal is: 8
+card input is: 8h
+
+value in decimal is: 8
+card input is: 8d
+
+value in decimal is: 8
+card input is: 8c
+
+value in decimal is: 9
+card input is: 9s
+
+value in decimal is: 9
+card input is: 9h
+
+value in decimal is: 9
+card input is: 9d
+
+value in decimal is: 9
+card input is: 9c
+
+value in decimal is: 10
+card input is: 0s
+
+value in decimal is: 10
+card input is: 0h
+
+value in decimal is: 10
+card input is: 0d
+
+value in decimal is: 10
+card input is: 0c
+
+value in decimal is: 11
+card input is: Js
+
+value in decimal is: 11
+card input is: Jh
+
+value in decimal is: 11
+card input is: Jd
+
+value in decimal is: 11
+card input is: Jc
+
+value in decimal is: 12
+card input is: Qs
+
+value in decimal is: 12
+card input is: Qh
+
+value in decimal is: 12
+card input is: Qd
+
+value in decimal is: 12
+card input is: Qc
+
+
+Overall Grade: FAILED
