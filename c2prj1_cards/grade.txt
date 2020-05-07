@@ -1,4 +1,4 @@
-Grading at Thu May  7 22:21:12 UTC 2020
+Grading at Thu May  7 22:26:08 UTC 2020
 Compiling cards.c
 Testing card_from_letters
 Passed
@@ -59,160 +59,108 @@ Passed
 Testing print_card
 Your print_card does not work the way I expect:
 value in decimal is: 13
-card input is: Ks
-
+Ks
 value in decimal is: 13
-card input is: Kh
-
+Kh
 value in decimal is: 13
-card input is: Kd
-
+Kd
 value in decimal is: 13
-card input is: Kc
-
+Kc
 value in decimal is: 14
-card input is: As
-
+As
 value in decimal is: 14
-card input is: Ah
-
+Ah
 value in decimal is: 14
-card input is: Ad
-
+Ad
 value in decimal is: 14
-card input is: Ac
-
+Ac
 value in decimal is: 2
-card input is: 2s
-
+2s
 value in decimal is: 2
-card input is: 2h
-
+2h
 value in decimal is: 2
-card input is: 2d
-
+2d
 value in decimal is: 2
-card input is: 2c
-
+2c
 value in decimal is: 3
-card input is: 3s
-
+3s
 value in decimal is: 3
-card input is: 3h
-
+3h
 value in decimal is: 3
-card input is: 3d
-
+3d
 value in decimal is: 3
-card input is: 3c
-
+3c
 value in decimal is: 4
-card input is: 4s
-
+4s
 value in decimal is: 4
-card input is: 4h
-
+4h
 value in decimal is: 4
-card input is: 4d
-
+4d
 value in decimal is: 4
-card input is: 4c
-
+4c
 value in decimal is: 5
-card input is: 5s
-
+5s
 value in decimal is: 5
-card input is: 5h
-
+5h
 value in decimal is: 5
-card input is: 5d
-
+5d
 value in decimal is: 5
-card input is: 5c
-
+5c
 value in decimal is: 6
-card input is: 6s
-
+6s
 value in decimal is: 6
-card input is: 6h
-
+6h
 value in decimal is: 6
-card input is: 6d
-
+6d
 value in decimal is: 6
-card input is: 6c
-
+6c
 value in decimal is: 7
-card input is: 7s
-
+7s
 value in decimal is: 7
-card input is: 7h
-
+7h
 value in decimal is: 7
-card input is: 7d
-
+7d
 value in decimal is: 7
-card input is: 7c
-
+7c
 value in decimal is: 8
-card input is: 8s
-
+8s
 value in decimal is: 8
-card input is: 8h
-
+8h
 value in decimal is: 8
-card input is: 8d
-
+8d
 value in decimal is: 8
-card input is: 8c
-
+8c
 value in decimal is: 9
-card input is: 9s
-
+9s
 value in decimal is: 9
-card input is: 9h
-
+9h
 value in decimal is: 9
-card input is: 9d
-
+9d
 value in decimal is: 9
-card input is: 9c
-
+9c
 value in decimal is: 10
-card input is: 0s
-
+0s
 value in decimal is: 10
-card input is: 0h
-
+0h
 value in decimal is: 10
-card input is: 0d
-
+0d
 value in decimal is: 10
-card input is: 0c
-
+0c
 value in decimal is: 11
-card input is: Js
-
+Js
 value in decimal is: 11
-card input is: Jh
-
+Jh
 value in decimal is: 11
-card input is: Jd
-
+Jd
 value in decimal is: 11
-card input is: Jc
-
+Jc
 value in decimal is: 12
-card input is: Qs
-
+Qs
 value in decimal is: 12
-card input is: Qh
-
+Qh
 value in decimal is: 12
-card input is: Qd
-
+Qd
 value in decimal is: 12
-card input is: Qc
-
+Qc
 
 Overall Grade: FAILED
