@@ -38,14 +38,12 @@ void retirement (int startAge, double initial, retire_info working, retire_info 
     if (month==12) {
       month=0;
       age++;
+  }  
   }
-  
   }
-  }
-  
   }
 
-int main(void) {
+int main() {
 retire_info working;
 retire_info retired; 
 working.months=489;
@@ -55,4 +53,5 @@ retired.months=384;
 retired.contribution=-4000;
 retired.rate_of_return=(0.01/12);
 retirement(327, 21345, working, retired) ;
+ return EXIT_SUCCESS;
 }
