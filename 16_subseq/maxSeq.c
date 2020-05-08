@@ -4,7 +4,7 @@
 size_t maxSeq(int * array, size_t n) {
   if (n<0) return EXIT_FAILURE;
   if (array==NULL) return EXIT_FAILURE;
-  if (n==0) return 1;
+  if (n==0) return 0;
   int maxCount1=1;
   int maxCount2=1;
   int temp;
