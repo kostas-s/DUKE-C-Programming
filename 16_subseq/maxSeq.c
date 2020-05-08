@@ -15,7 +15,7 @@ size_t maxSeq(int * array, size_t n) {
       if (maxCount1>maxCount2){
 	temp=maxCount2;
 	maxCount2=maxCount1;
-	maxCount1=temp;
+	maxCount1=1;
       }else{
 	maxCount1=1;
       }
