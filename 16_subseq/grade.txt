@@ -1,10 +1,9 @@
-Grading at Fri May  8 20:01:50 UTC 2020
+Grading at Fri May  8 20:03:14 UTC 2020
 Attempting to compile maxSeq.c 
 maxSeq.c: In function ‘maxSeq’:
-maxSeq.c:12:17: error: comparison between pointer and integer [-Werror]
-     if (array[i]==NULL) return 0;
-                 ^
-cc1: all warnings being treated as errors
+maxSeq.c:12:9: error: invalid type argument of unary ‘*’ (have ‘int’)
+     if (*array[i]==NULL) return 0;
+         ^
 The code did not compile!
 
 Overall Grade: F
