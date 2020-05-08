@@ -1,0 +1,8 @@
+Grading at Fri May  8 14:06:08 UTC 2020
+Attempting to compile test.c
+gcc -Wall -fsanitize=address -ggdb3 -o test test.c
+compiled
+Your file matched the expected output
+Your output matched what we expected
+
+Overall Grade: PASSED
