@@ -7,13 +7,13 @@ size_t maxSeq(int * array, size_t n) {
   if (n==0) return 0;
   size_t maxCount1=1;
   size_t maxCount2=1;
-  size_t temp;
+  //  size_t temp;
   for (size_t i=0; i<n; i++){
     if (array[i]<array[i+1]) {
       maxCount1++;
 	  } else {
       if (maxCount1>maxCount2){
-	temp=maxCount2;
+	//	temp=maxCount2;
 	maxCount2=maxCount1;
 	maxCount1=1;
       }else{
