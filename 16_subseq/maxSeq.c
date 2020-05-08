@@ -9,6 +9,7 @@ size_t maxSeq(int * array, size_t n) {
   size_t maxCount2=1;
   //  size_t temp;
   for (size_t i=0; i<n; i++){
+    if (array[i]==NULL) return 0;
     if (array[i]<array[i+1]) {
       maxCount1++;
 	  } else {
