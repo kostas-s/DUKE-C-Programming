@@ -1,0 +1,8 @@
+Grading at Fri May  8 16:10:38 UTC 2020
+Attempting to compile test.c
+gcc -Wall -pedantic -ggdb3 -o test test.c
+compiled
+Your file matched the expected output
+Your output matched what we expected
+
+Overall Grade: A
