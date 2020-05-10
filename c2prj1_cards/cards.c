@@ -2,7 +2,7 @@
 #include <assert.h>
 #include <stdlib.h>
 #include "cards.h"
-
+#include "deck.h"
 
 void assert_card_valid(card_t c) {
   assert(c.value>=2 && c.value <=VALUE_ACE);
