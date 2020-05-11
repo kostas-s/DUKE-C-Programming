@@ -140,6 +140,7 @@ int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n){
       //      printf("is ACE LOW");
       return -1;
     }
+  }
   for (size_t i=index; i<n; i++){
     unsigned card_v=hand->cards[i]->value;
     suit_t card_s=hand->cards[i]->suit;
@@ -157,7 +158,6 @@ int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n){
   }
   }
 
-  }
   if (len>=5) {
     return 1;
   }else{
