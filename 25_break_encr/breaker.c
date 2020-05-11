@@ -26,7 +26,7 @@ int find_common_char(FILE * f){
 }
 
 void decrypt(FILE * f, int key){
-  printf("DECRYPTED FILE BELOW:\n");
+  //  printf("DECRYPTED FILE BELOW:\n");
   int c;
   while (( c = fgetc(f)) != EOF){
     if (isalpha(c)){
@@ -35,12 +35,12 @@ void decrypt(FILE * f, int key){
       c -= key;
       if (c<0) c+=26;
       c += 'a';
-      printf("%c",c);
+      //  printf("%c",c);
     }else{
-      printf("%c",c);
+      //    printf("%c",c);
   }
 }
-  printf("\n");
+  // printf("\n");
 }
 
 int main(int argc, char ** argv){
