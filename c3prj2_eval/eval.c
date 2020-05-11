@@ -225,7 +225,7 @@ hand_eval_t build_hand_from_match(deck_t * hand,
   //  printf("in buildhandfrommatch\n");
   hand_eval_t ans;
     ans.ranking=what;
-    for (size_t i=0; i<n; i++){
+    for (size_t i=0; i<5; i++){
       ans.cards[i]=hand->cards[i+idx];
 	}
     size_t from=0;
