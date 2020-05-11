@@ -1,0 +1,15 @@
+Grading at Mon May 11 22:57:21 UTC 2020
+Attempting to compile breaker.c 
+gcc -Wall -pedantic -o breaker breaker.c
+testcase1 passed
+#################################################
+testcase2:
+testcase2 failed
+#################################################
+testcase3:
+testcase3 failed
+#################################################
+testcase4:
+valgrind reported memory errors or your program ran too long
+
+Overall Grade: F
