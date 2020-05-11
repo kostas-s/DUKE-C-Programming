@@ -52,14 +52,13 @@ suit_t flush_suit(deck_t * hand) {
     return NUM_SUITS;
 }
 
-// THIS IS CURRENTLY NOT WORKING?
+
 unsigned get_largest_element(unsigned * arr, size_t n) {
   unsigned current_largest=0;
   // printf("get_largest_element\n");
   for (int i=0; i<n; i++){
     if (arr[i]>current_largest) current_largest=arr[i];
   }
-  // printf("Returning: %u as current largest\n",current_largest);
   return current_largest;
 }
 
@@ -95,10 +94,8 @@ int strt_conts(unsigned c1, unsigned c2){
 int suitSame(suit_t entry, suit_t entry2, suit_t entry3){
   // printf("In suitSame\n");
   if (entry==entry2 && entry==entry3) {
-    //printf("returning1\n");
     return 1;
   }else{
-    // printf("returning0\n");
     return 0;
   }
 }
@@ -143,7 +140,6 @@ int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n){
       //      printf("is ACE LOW");
       return -1;
     }
-  }else{
   for (size_t i=index; i<n; i++){
     unsigned card_v=hand->cards[i]->value;
     suit_t card_s=hand->cards[i]->suit;
