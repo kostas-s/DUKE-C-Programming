@@ -4,7 +4,7 @@
 #include <assert.h>
 
 int card_ptr_comp(const void * vp1, const void * vp2) {
-  //  printf("in cardptr\n");
+//  printf("in cardptr\n");
   const card_t * const * cp1 = vp1;
   const card_t * const * cp2 = vp2;
     int result=0;
@@ -81,7 +81,7 @@ ssize_t  find_secondary_pair(deck_t * hand, unsigned * match_counts, size_t matc
   return -1;
 }
 
-int strt_conts(int c1, int c2){
+int strt_conts(unsigned c1, unsigned c2){
   //  printf("In strt_conts with %d, %d\n",c1,c2);
   if (c1-1==c2){
     return 1;
@@ -107,7 +107,7 @@ int is_ace_low_straight_at(deck_t *hand, size_t index, suit_t fs){
   int nextValue=5;
 
   for (int i=0; i<7; i++){
-    int card_v=hand->cards[i]->value;
+  unsigned card_v=hand->cards[i]->value;
  suit_t card_s=hand->cards[i]->suit;
     if (fs!=NUM_SUITS) {
       if (card_v==nextValue && card_s==fs){
@@ -141,7 +141,7 @@ int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n){
     }
   }else{
   for (size_t i=index; i<7; i++){
-    int card_v=hand->cards[i]->value;
+    unsigned card_v=hand->cards[i]->value;
     suit_t card_s=hand->cards[i]->suit;
     if (fs!=NUM_SUITS){
       if ((card_s==fs) && (card_v==lastValue-1)) {
@@ -173,8 +173,8 @@ int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
   // printf("In is_straightat\n");
   for (size_t i=index; i<6; i++) {
     // if (i>5) break;
-    int card1val=hand->cards[i]->value;
-    int card2val=hand->cards[i+1]->value;
+    unsigned card1val=hand->cards[i]->value;
+    unsigned card2val=hand->cards[i+1]->value;
     // if (card1val==card2val) continue;
     // suit_t card1s=hand->cards[i]->suit;
     //suit_t card2s=hand->cards[i+1]->suit;
