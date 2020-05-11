@@ -222,53 +222,85 @@ hand_eval_t build_hand_from_match(deck_t * hand,
 				  unsigned n,
 				  hand_ranking_t what,
 				  size_t idx) {
+
   //  printf("in buildhandfrommatch\n");
   hand_eval_t ans;
-    ans.ranking=what;
-    for (size_t i=0; i<5; i++){
-      ans.cards[i]=hand->cards[i+idx];
-	}
-    size_t from=0;
-    switch(what){
-    case STRAIGHT_FLUSH:
-      break;
-    case FOUR_OF_A_KIND:
-      for (size_t to=n; to<5; to++, from++){
-	if (from==idx) from=idx+n;
-	ans.cards[to]=hand->cards[from];
-      }
-      break;
-    case FULL_HOUSE:
-      break;
-    case FLUSH:
-      break;
-    case STRAIGHT:
-      break;
-    case THREE_OF_A_KIND:
-      for (size_t to=n; to<5; to++, from++){
-	if (from==idx) from=idx+n;
-	ans.cards[to]=hand->cards[from];
-      }
-      break;
-    case TWO_PAIR:
-      for (size_t to=n; to<5; to++, from++){
-	if (from==idx) from=idx+n;
-	ans.cards[to]=hand->cards[from];
-      }
-      break;
-    case PAIR:
-      for (size_t to=n; to<5; to++, from++){
-	if (from==idx) from=idx+n;
-	ans.cards[to]=hand->cards[from];
-      }
-      break;
-    case NOTHING:
-      for (size_t to=n; to<5; to++, from++){
-	ans.cards[to]=hand->cards[from];
-      }
-	break;
-      
+  ans.ranking = what;
+
+  // start at idx and copy n cards to ans.cards (AKA n of a kind)
+  for (int i=0; i<n; i++){
+    ans.cards[i]=hand->cards[idx+i];
+  }
+
+  // copy the rest
+  int i=n;
+  int x=0;
+
+  //copies cards before the n of a kind
+  for(; i<5 && x<idx; i++){
+    ans.cards[i] = hand->cards[x];
+    x++;
+  }
+
+  //if hand is still not completed, continue copying after n of a kind.
+  if (i<5){
+    x=idx+n;
+
+    for(; i<5; i++){
+      ans.cards[i] = hand->cards[x];
+      x++;
+
     }
+    
+  }
+  
+  // PREVIOUS IMPLEMENTATION CAUSED VALGRIND ERROR
+  /* hand_eval_t ans; */
+  /*   ans.ranking=what; */
+  /*   for (size_t i=0; i<5; i++){ */
+  /*     ans.cards[i]=hand->cards[i+idx]; */
+  /* 	} */
+  /*   size_t from=0; */
+  /*   switch(what){ */
+  /*   case STRAIGHT_FLUSH: */
+  /*     break; */
+  /*   case FOUR_OF_A_KIND: */
+  /*     for (size_t to=n; to<5; to++, from++){ */
+  /* 	if (from==idx) from=idx+n; */
+  /* 	ans.cards[to]=hand->cards[from]; */
+  /*     } */
+  /*     break; */
+  /*   case FULL_HOUSE: */
+  /*     break; */
+  /*   case FLUSH: */
+  /*     break; */
+  /*   case STRAIGHT: */
+  /*     break; */
+  /*   case THREE_OF_A_KIND: */
+  /*     for (size_t to=n; to<5; to++, from++){ */
+  /* 	if (from==idx) from=idx+n; */
+  /* 	ans.cards[to]=hand->cards[from]; */
+  /*     } */
+  /*     break; */
+  /*   case TWO_PAIR: */
+  /*     for (size_t to=n; to<5; to++, from++){ */
+  /* 	if (from==idx) from=idx+n; */
+  /* 	ans.cards[to]=hand->cards[from]; */
+  /*     } */
+  /*     break; */
+  /*   case PAIR: */
+  /*     for (size_t to=n; to<5; to++, from++){ */
+  /* 	if (from==idx) from=idx+n; */
+  /* 	ans.cards[to]=hand->cards[from]; */
+  /*     } */
+  /*     break; */
+  /*   case NOTHING: */
+  /*     for (size_t to=n; to<5; to++, from++){ */
+  /* 	ans.cards[to]=hand->cards[from]; */
+  /*     } */
+  /* 	break; */
+      
+  /*   } */
 
   return ans;
 }
