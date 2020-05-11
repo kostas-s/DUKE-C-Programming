@@ -4,7 +4,7 @@
 #include <assert.h>
 
 int card_ptr_comp(const void * vp1, const void * vp2) {
-//  printf("in cardptr\n");
+  // printf("in cardptr\n");
   const card_t * const * cp1 = vp1;
   const card_t * const * cp2 = vp2;
     int result=0;
@@ -19,13 +19,15 @@ int card_ptr_comp(const void * vp1, const void * vp2) {
 }
 
 suit_t flush_suit(deck_t * hand) {
-  // printf("in flush_suit\n");
+  //  printf("in flush_suit\n");
   size_t num=hand->n_cards;
+  //printf("num: %zu\n",num);
   int spades=0;
   int hearts=0;
   int diamonds=0;
   int clubs=0;
   for (size_t i=0; i<num; i++){
+    // printf("i: %zu\n", i);
     switch(hand->cards[i]->suit){
     case SPADES:
       spades++;
@@ -101,12 +103,12 @@ int suitSame(suit_t entry, suit_t entry2, suit_t entry3){
   }
 }
 
-int is_ace_low_straight_at(deck_t *hand, size_t index, suit_t fs){
+int is_ace_low_straight_at(deck_t *hand, size_t index, suit_t fs, int n){
   // printf("in ace low\n");
   int len=1;
   int nextValue=5;
 
-  for (int i=0; i<7; i++){
+  for (int i=0; i<n; i++){
     
     unsigned card_v=hand->cards[i]->value;
     suit_t card_s=hand->cards[i]->suit;
@@ -132,17 +134,17 @@ int is_ace_low_straight_at(deck_t *hand, size_t index, suit_t fs){
  }
 }
 
-int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs){
+int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n){
   int lastValue=hand->cards[index]->value;
   int len=1;
   if (index==0 && lastValue==14) {
-    int aceLow=is_ace_low_straight_at(hand, index, fs);
+    int aceLow=is_ace_low_straight_at(hand, index, fs, n);
     if (aceLow==1){
       //      printf("is ACE LOW");
       return -1;
     }
   }else{
-  for (size_t i=index; i<7; i++){
+  for (size_t i=index; i<n; i++){
     unsigned card_v=hand->cards[i]->value;
     suit_t card_s=hand->cards[i]->suit;
     if (fs!=NUM_SUITS){
@@ -169,7 +171,8 @@ int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs){
 
 int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
   if (((hand->n_cards) - index) < 5) return 0;
-  if (hand->n_cards<7) return 0;
+  // this should not be needed;
+  //if (hand->n_cards<7) return 0;
   //  printf("n cards is%zu", hand->n_cards);
   if (fs!=NUM_SUITS && hand->cards[index]->suit!=fs) return 0;
   // int len=1;
@@ -188,7 +191,7 @@ int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
   //	  len++;
   // }
   // }
-  result=is_n_length_straight_at(hand, index, fs);
+  result=is_n_length_straight_at(hand, index, fs, hand->n_cards);
   // printf("about to return: %d",result);
   return result;
 
