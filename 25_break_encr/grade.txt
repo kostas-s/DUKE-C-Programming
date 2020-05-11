@@ -1,15 +1,15 @@
-Grading at Mon May 11 22:59:30 UTC 2020
+Grading at Mon May 11 23:09:06 UTC 2020
 Attempting to compile breaker.c 
 gcc -Wall -pedantic -o breaker breaker.c
 testcase1 passed
 #################################################
 testcase2:
-testcase2 passed
+testcase2 failed
 #################################################
 testcase3:
 testcase3 failed
 #################################################
 testcase4:
-testcase4 passed
+testcase4 failed
 
-Overall Grade: C
+Overall Grade: F
