@@ -25,23 +25,24 @@ int find_common_char(FILE * f){
   return max_chars_idx+97;
 }
 
-void decrypt(FILE * f, int key){
-  //  printf("DECRYPTED FILE BELOW:\n");
-  int c;
-  while (( c = fgetc(f)) != EOF){
-    if (isalpha(c)){
-      c=tolower(c);
-      c -= 'a';
-      c -= key;
-      if (c<0) c+=26;
-      c += 'a';
-      //  printf("%c",c);
-    }else{
-      //    printf("%c",c);
-  }
-}
-  // printf("\n");
-}
+/* //Made for my own fun and testing purposes, working good. */
+/* void decrypt(FILE * f, int key){ */
+/*   //  printf("DECRYPTED FILE BELOW:\n"); */
+/*   int c; */
+/*   while (( c = fgetc(f)) != EOF){ */
+/*     if (isalpha(c)){ */
+/*       c=tolower(c); */
+/*       c -= 'a'; */
+/*       c -= key; */
+/*       if (c<0) c+=26; */
+/*       c += 'a'; */
+/*       //  printf("%c",c); */
+/*     }else{ */
+/*       //    printf("%c",c); */
+/*   } */
+/* } */
+/*   // printf("\n"); */
+/* } */
 
 int main(int argc, char ** argv){
   int most_common_ascii;
@@ -57,10 +58,15 @@ int main(int argc, char ** argv){
   most_common_ascii = find_common_char(f);
   //  printf("===%c is the most common letter===\n",most_common_ascii);
   int key = most_common_ascii - 101;
+
+  // To use my own decrypt, comment the next two lines and uncomment rewind/decrypt
+  key+=22;
+  key%=26;
   assert(key>=0 && key < 26);
   fprintf(stdout, "%d\n",key);
-  rewind(f);
-  decrypt(f, key);
+
+  // rewind(f);
+  // decrypt(f, key);
 
   if (fclose(f) != 0){
     perror("Failed to close the input file");
