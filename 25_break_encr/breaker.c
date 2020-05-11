@@ -59,9 +59,11 @@ int main(int argc, char ** argv){
   //  printf("===%c is the most common letter===\n",most_common_ascii);
   int key = most_common_ascii - 101;
 
-  // To use my own decrypt, comment the next two lines and uncomment rewind/decrypt
+  // To use my own decrypt, remove next if statement and uncomment rewind/decrypt
+  if (key<0){
   key+=22;
   key%=26;
+  }
   assert(key>=0 && key < 26);
   fprintf(stdout, "%d\n",key);
 
