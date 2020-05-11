@@ -107,8 +107,10 @@ int is_ace_low_straight_at(deck_t *hand, size_t index, suit_t fs){
   int nextValue=5;
 
   for (int i=0; i<7; i++){
-  unsigned card_v=hand->cards[i]->value;
- suit_t card_s=hand->cards[i]->suit;
+    
+    unsigned card_v=hand->cards[i]->value;
+    suit_t card_s=hand->cards[i]->suit;
+
     if (fs!=NUM_SUITS) {
       if (card_v==nextValue && card_s==fs){
 	nextValue--;
@@ -130,7 +132,7 @@ int is_ace_low_straight_at(deck_t *hand, size_t index, suit_t fs){
  }
 }
 
-int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n){
+int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs){
   int lastValue=hand->cards[index]->value;
   int len=1;
   if (index==0 && lastValue==14) {
@@ -166,24 +168,27 @@ int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n){
 }
 
 int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
-  if (hand->n_cards - index < 5) return 0;
+  if (((hand->n_cards) - index) < 5) return 0;
+  if (hand->n_cards<7) return 0;
+  //  printf("n cards is%zu", hand->n_cards);
   if (fs!=NUM_SUITS && hand->cards[index]->suit!=fs) return 0;
-  int len=1;
+  // int len=1;
   int result=0;
   // printf("In is_straightat\n");
-  for (size_t i=index; i<6; i++) {
+  // for (size_t i=index; i<6; i++) {
     // if (i>5) break;
-    unsigned card1val=hand->cards[i]->value;
-    unsigned card2val=hand->cards[i+1]->value;
-    // if (card1val==card2val) continue;
-    // suit_t card1s=hand->cards[i]->suit;
-    //suit_t card2s=hand->cards[i+1]->suit;
-    if (card1val==card2val) continue;
-    if (strt_conts(card1val, card2val)){
-	  len++;
-    }
-  }
-  result=is_n_length_straight_at(hand, index, fs, len);
+  // printf("value is: %u", hand->cards[i+1]->value);
+  //  unsigned card1val=hand->cards[i]->value;
+  //  unsigned card2val=hand->cards[i+1]->value;
+  // // if (card1val==card2val) continue;
+  // // suit_t card1s=hand->cards[i]->suit;
+  //  //suit_t card2s=hand->cards[i+1]->suit;
+  // if (card1val==card2val) continue;
+  //  if (strt_conts(card1val, card2val)){
+  //	  len++;
+  // }
+  // }
+  result=is_n_length_straight_at(hand, index, fs);
   // printf("about to return: %d",result);
   return result;
 
