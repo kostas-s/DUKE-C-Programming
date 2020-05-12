@@ -51,8 +51,12 @@ int main(int argc, char ** argv){
   int y=0;
   int x=0;
   while ((c = fgetc(f))!= EOF){
+    if (y==10){
+      fprintf(stderr, "Matrix has more than 10 lines\n");
+      return EXIT_FAILURE;
+    }
     if (c==10 && x<10){
-      fprintf(stderr, "Wrong line size, matrix should be 10x10\n");
+      fprintf(stderr, "Line %d is shorter than 10 characters\n",y);
       return EXIT_FAILURE;
     }
     if (x==10){
@@ -61,19 +65,22 @@ int main(int argc, char ** argv){
       x=0;
       continue;
     }else{
-      fprintf(stderr, "Wrong line size, matrix should be 10x10\n");
-      fprintf(stderr, "c:%c, y:%d, x:%d\n",c,y,x);
+	fprintf(stderr, "Line %d is longer than 10 characters\n",y);
       return EXIT_FAILURE;
     }
     }
     matrix[y][x]=c;
     x++;
   }
+  if (x!=0 || y!=10){
+    fprintf(stderr, "Matrix is of wrong size (should be 10x10)\n");
+    return EXIT_FAILURE;
+      }
   rotate(matrix);
   
 
   if (fclose(f) != 0){
-    perror("Failed to close the input file");
+    perror("Failed to close the input file\n");
     return EXIT_FAILURE;
   }
   return EXIT_SUCCESS;
