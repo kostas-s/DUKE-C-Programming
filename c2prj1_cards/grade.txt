@@ -1,7 +1,25 @@
-Grading at Tue May 12 13:46:13 UTC 2020
+Grading at Tue May 12 13:48:27 UTC 2020
 Compiling cards.c
-cards.c:5:18: fatal error: deck.h: No such file or directory
-compilation terminated.
-Could not compile your card.c!
+Testing card_from_letters
+Passed
+Testing value_letter and suit_letter
+Passed
+Testing print_card
+Passed
+Testing card_from_num
+Passed
+Testing ranking_to_string
+ranking_to_string(STRAIGHT_FLUSH) resulted in STRAIGHT_FLUSH  (Correct)
+ranking_to_string(FOUR_OF_A_KIND) resulted in FOUR_OF_A_KIND  (Correct)
+ranking_to_string(FULL_HOUSE) resulted in FULL_HOUSE  (Correct)
+ranking_to_string(FLUSH) resulted in FLUSH  (Correct)
+ranking_to_string(STRAIGHT) resulted in STRAIGHT  (Correct)
+ranking_to_string(THREE_OF_A_KIND) resulted in THREE_OF_A_KIND  (Correct)
+ranking_to_string(TWO_PAIR) resulted in TWO_PAIR  (Correct)
+ranking_to_string(PAIR) resulted in PAIR  (Correct)
+ranking_to_string(NOTHING) resulted in NOTHING  (Correct)
+Passed
+Testing assert_card_valid
+Passed
 
-Overall Grade: FAILED
+Overall Grade: PASSED
