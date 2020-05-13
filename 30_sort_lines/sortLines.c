@@ -5,6 +5,7 @@
 void printData(char ** sortedData, size_t count){
   for (size_t i=0; i<count; i++){
     printf("%s", sortedData[i]);
+    free(sortedData[i]);
   }
 }
 
