@@ -1,0 +1,15 @@
+Grading at Wed May 13 23:20:27 UTC 2020
+Attempting to compile:
+#################################################
+testcase1:
+valgrind reported memory errors
+#################################################
+testcase2:
+valgrind reported memory errors
+#################################################
+testcase3:
+Your output is correct
+  - Valgrind was clean (no errors, no memory leaks)
+valgrind was clean
+
+Overall Grade: F
