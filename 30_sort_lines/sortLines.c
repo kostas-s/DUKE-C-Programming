@@ -35,7 +35,7 @@ void loadData(FILE * f){
   size_t sz=0;
   size_t i=0;
   while (getline(&line, &sz, f)>=0){
-    array = realloc(array, sz*sizeof(*array)+sizeof(array));
+    array=realloc(array, sz*sizeof(*array)+sizeof(*array));
     array[i]=line;
     // printf("line is:%s",line);
     //printf("array%zu is:%s\n",i,array[i]);
@@ -45,16 +45,19 @@ void loadData(FILE * f){
   free(line);
   sortData(array, i);
   printData(array, i);
+  free(array);
 }
 
+
 int main(int argc, char ** argv) {
+
   if (argc==1){
     loadData(stdin);
     }
   
   if (argc>1){
     for (int i=1; i<argc; i++){
-      FILE * f = fopen(argv[1], "r");
+      FILE * f = fopen(argv[i], "r");
       if (f==NULL) {
 	fprintf(stderr, "File not found\n");
 	return EXIT_FAILURE;
