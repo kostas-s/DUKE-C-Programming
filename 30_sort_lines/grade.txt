@@ -1,36 +1,10 @@
-Grading at Wed May 13 14:10:55 UTC 2020
+Grading at Wed May 13 14:20:25 UTC 2020
 Attempting to compile sortLines.c
 #################################################
 testcase1:
 testcase1 passed, your program successfully indicated a failure
-  - Valgrind reported errors
-valgrind was not clean
-==1008== Memcheck, a memory error detector
-==1008== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==1008== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==1008== 
-==1008== Parent PID: 1007
-==1008== 
-==1008== 
-==1008== HEAP SUMMARY:
-==1008==     in use at exit: 600 bytes in 5 blocks
-==1008==   total heap usage: 15 allocs, 10 frees, 14,856 bytes allocated
-==1008== 
-==1008== 600 bytes in 5 blocks are definitely lost in loss record 1 of 1
-==1008==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1008==    by 0x4EA89E7: getdelim (iogetdelim.c:62)
-==1008==    by 0x4009AF: loadData (in /graderhome/work/30_sort_lines/sortLines)
-==1008==    by 0x400AA3: main (in /graderhome/work/30_sort_lines/sortLines)
-==1008== 
-==1008== LEAK SUMMARY:
-==1008==    definitely lost: 600 bytes in 5 blocks
-==1008==    indirectly lost: 0 bytes in 0 blocks
-==1008==      possibly lost: 0 bytes in 0 blocks
-==1008==    still reachable: 0 bytes in 0 blocks
-==1008==         suppressed: 0 bytes in 0 blocks
-==1008== 
-==1008== For counts of detected and suppressed errors, rerun with: -v
-==1008== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+  - Valgrind was clean (no errors, no memory leaks)
+valgrind was clean
 #################################################
 testcase2:
 Your output is correct
@@ -39,64 +13,12 @@ valgrind was clean
 #################################################
 testcase3:
 Your output is correct
-  - Valgrind reported errors
-valgrind was not clean
-==1039== Memcheck, a memory error detector
-==1039== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==1039== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==1039== 
-==1039== Parent PID: 1038
-==1039== 
-==1039== 
-==1039== HEAP SUMMARY:
-==1039==     in use at exit: 600 bytes in 5 blocks
-==1039==   total heap usage: 14 allocs, 9 frees, 14,304 bytes allocated
-==1039== 
-==1039== 600 bytes in 5 blocks are definitely lost in loss record 1 of 1
-==1039==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1039==    by 0x4EA89E7: getdelim (iogetdelim.c:62)
-==1039==    by 0x4009AF: loadData (in /graderhome/work/30_sort_lines/sortLines)
-==1039==    by 0x400AA3: main (in /graderhome/work/30_sort_lines/sortLines)
-==1039== 
-==1039== LEAK SUMMARY:
-==1039==    definitely lost: 600 bytes in 5 blocks
-==1039==    indirectly lost: 0 bytes in 0 blocks
-==1039==      possibly lost: 0 bytes in 0 blocks
-==1039==    still reachable: 0 bytes in 0 blocks
-==1039==         suppressed: 0 bytes in 0 blocks
-==1039== 
-==1039== For counts of detected and suppressed errors, rerun with: -v
-==1039== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+  - Valgrind was clean (no errors, no memory leaks)
+valgrind was clean
 #################################################
 testcase4:
 Your output is correct
-  - Valgrind reported errors
-valgrind was not clean
-==1056== Memcheck, a memory error detector
-==1056== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==1056== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==1056== 
-==1056== Parent PID: 1055
-==1056== 
-==1056== 
-==1056== HEAP SUMMARY:
-==1056==     in use at exit: 1,320 bytes in 11 blocks
-==1056==   total heap usage: 29 allocs, 18 frees, 25,600 bytes allocated
-==1056== 
-==1056== 1,320 bytes in 11 blocks are definitely lost in loss record 1 of 1
-==1056==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1056==    by 0x4EA89E7: getdelim (iogetdelim.c:62)
-==1056==    by 0x4009AF: loadData (in /graderhome/work/30_sort_lines/sortLines)
-==1056==    by 0x400AA3: main (in /graderhome/work/30_sort_lines/sortLines)
-==1056== 
-==1056== LEAK SUMMARY:
-==1056==    definitely lost: 1,320 bytes in 11 blocks
-==1056==    indirectly lost: 0 bytes in 0 blocks
-==1056==      possibly lost: 0 bytes in 0 blocks
-==1056==    still reachable: 0 bytes in 0 blocks
-==1056==         suppressed: 0 bytes in 0 blocks
-==1056== 
-==1056== For counts of detected and suppressed errors, rerun with: -v
-==1056== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+  - Valgrind was clean (no errors, no memory leaks)
+valgrind was clean
 
-Overall Grade: B
+Overall Grade: A
