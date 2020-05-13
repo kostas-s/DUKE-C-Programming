@@ -117,25 +117,18 @@ void printBoard(board_t * b) {
 int countMines(board_t * b, int x, int y) {
   int count=0;
   for (int i=y-1; i<=y+1; i++){
-    if (i<0) i=0;
-    if (i>=b->height) break;
     for (int j=x-1; j<=x+1; j++){
-      if (j<0) j=0;
-      if (j>=b->width) continue;
-      if (i==x && j==y) continue;
-      //  printf("i reached ismine i:%d and j:%d\n",i,j);
-      if IS_MINE(b->board[i][j]){
-	  //  printf("countedmine");
-	  count+=1;
-	}
+      if (i==y && j==x) continue;
+      if (i >= 0 && i < b->height && j >= 0 && j<b->width){
+	if (IS_MINE(b->board[i][j])) count+=1;
+  	}
       }
     }
-
+  return count;
+}
 
 
   //  printf("returning count: %d",count);
-  return count;
-}
 int click (board_t * b, int x, int y) {
   if (x < 0 || x >= b->width ||
       y < 0 || y >= b->height) {
@@ -167,12 +160,13 @@ int checkWin(board_t * b) {
 }
 
 void freeBoard(board_t * b) {
-  for (int y=0; y<b->height; y++){
+  for (int y=0; y < b->height; y++) {
     free(b->board[y]);
-    //    printf("inside FREEBOARD");
   }
+  free(b->board);
   free(b);
 }
+
 
 int readInt(char ** linep, size_t * lineszp) {
   if (getline (linep, lineszp, stdin) == -1) {
