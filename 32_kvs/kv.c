@@ -6,44 +6,26 @@
 #include <ctype.h>
 
 kvpair_t * readKV(FILE *f) {
-  size_t sz=0;
-  char * line=NULL;
-  kvpair_t * readArray=NULL;
-  //  malloc(sizeof(readArray));
-
-  assert(f!=NULL);
-  //char * key =malloc(sizeof(char*)*sz);
-  //char * value = malloc(sizeof(char*)*sz);
-  char * key=NULL;
-  char * value=NULL;
- 
-  if (getline(&line, &sz, f)!=EOF){
-    for (size_t i=0; i<sz; i++){
-      if (line[i]==61) {
-	int x=0;
-	for (size_t j=i+1; j<sz; j++, x++){
-	  if (line[j]=='\n' || line[j]=='\0'){
-	    break;
-	  }
-	  value=realloc(value, (x+1)*sizeof(value));
-	  value[x]=line[j];
-	}
-	break;
-      }
-      key = realloc(key, (i+1)*sizeof(key));
-      key[i]=line[i];
-    }
-    readArray=realloc(readArray, sz*sizeof(readArray));
-    readArray->key=key;
-    readArray->value=value;
-  }else{
-    free(line);
-    //free(key);
-    //free(value);
-    return 0;
+  char *line = NULL;
+  size_t sz = 0;
+				 //Get whole line and store it into "line"
+  if (getline(&line, &sz, f)==EOF) {
+    free(line);                  //free line if we've reached EOF
+    return NULL;
   }
-  free(line);
-  return readArray;
+				 //Find first occurrence to = and set ptr to point there
+  char * ptr1 = strchr(line, '=');
+  if (ptr1 == NULL) return NULL;
+
+  char * ptr2 = strchr(line, '\n');
+  * ptr1 = '\0';                 //Create bounds of key and value, line will point to key and ptr1 at '\0' - previously '='
+  * ptr2 = '\0';
+
+  kvpair_t * returnPair=malloc(sizeof(*returnPair));
+  returnPair->key = line;
+  ptr1++;
+  returnPair->value = ptr1;
+  return returnPair;
 }
 
 kvarray_t * readKVs(const char * fname) {
@@ -72,7 +54,7 @@ kvarray_t * readKVs(const char * fname) {
 void freeKVs(kvarray_t * pairs) {
   for (int i=0; i<pairs->list_len; i++){
     free(pairs->list[i]->key);
-    free(pairs->list[i]->value);
+    //free(pairs->list[i]->value); Commented out, getting invalid frees on Valgrind
     free(pairs->list[i]);
   }
   free(pairs->list);
