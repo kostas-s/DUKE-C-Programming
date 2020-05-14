@@ -71,7 +71,9 @@ void printKVs(kvarray_t * pairs) {
 
 char * lookupValue(kvarray_t * pairs, const char * key) {
   for (int i=0; i<pairs->list_len; i++){
-    if (strcmp(pairs->list[i]->key,key)==0){
+    //    printf("in forloop with key: %s, comparing to %s\n", key, pairs->list[i]->key);    
+    if (strcmp(pairs->list[i]->key, key)==0){
+      // printf("FOUND IT");
       return pairs->list[i]->value;
     }
   }

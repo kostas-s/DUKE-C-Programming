@@ -43,7 +43,7 @@ void printCounts(counts_t * c, FILE * outFile) {
     fprintf(outFile, "%s: %d\n", c->array[i]->value, c->array[i]->count);
   }
   if (c->unknown_count>0){
-    fprintf(outFile, "<unknown>: %d\n", c->unknown_count);
+    fprintf(outFile, "<unknown> : %d\n", c->unknown_count);
 }
 }
 
