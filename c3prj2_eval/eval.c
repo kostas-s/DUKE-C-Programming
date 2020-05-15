@@ -4,7 +4,6 @@
 #include <assert.h>
 
 int card_ptr_comp(const void * vp1, const void * vp2) {
-  // printf("in cardptr\n");
   const card_t * const * cp1 = vp1;
   const card_t * const * cp2 = vp2;
     int result=0;
@@ -19,15 +18,12 @@ int card_ptr_comp(const void * vp1, const void * vp2) {
 }
 
 suit_t flush_suit(deck_t * hand) {
-  //  printf("in flush_suit\n");
   size_t num=hand->n_cards;
-  //printf("num: %zu\n",num);
   int spades=0;
   int hearts=0;
   int diamonds=0;
   int clubs=0;
   for (size_t i=0; i<num; i++){
-    // printf("i: %zu\n", i);
     switch(hand->cards[i]->suit){
     case SPADES:
       spades++;
