@@ -84,13 +84,22 @@ void free_deck(deck_t * deck){
 
 
 int deck_contains(deck_t * d, card_t c){
-  for (size_t i=0; i<(d->n_cards); i++) {
-    if (((d->cards[i]->value) == c.value) && ((d->cards[i]->suit)==c.suit)) {
-      //  printf("contained in deck");
+  card_t ** card_pntr = d -> cards;
+  for (int i = 0; i < (d -> n_cards); i++) {
+    if (suit_letter(**card_pntr) == suit_letter(c) && value_letter(**card_pntr) == value_letter(c)) {
       return 1;
     }
+    card_pntr++;
   }
   return 0;
+
+  /* for (size_t i=0; i<(d->n_cards); i++) { */
+  /*   if (((d->cards[i]->value) == c.value) && ((d->cards[i]->suit)==c.suit)) { */
+  /*     //  printf("contained in deck"); */
+  /*     return 1; */
+  /*   } */
+  /* } */
+  /* return 0; */
 }
 
 void print_hand(deck_t * hand){
