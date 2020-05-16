@@ -20,6 +20,8 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc){
     if (temp!=NULL){
       r_deck[num]=temp;
       num++;
+    }else{
+      continue;
     }
     
     
