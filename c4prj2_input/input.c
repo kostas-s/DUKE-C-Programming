@@ -8,7 +8,7 @@
 #include "cards.h"
 
 deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc){
-  assert(f!=NULL);
+  //  assert(f!=NULL);
   size_t num = 0;
   size_t sz = 0;
   char * line = NULL;
