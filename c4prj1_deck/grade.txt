@@ -1,4 +1,4 @@
-Grading at Sat May 16 15:18:00 UTC 2020
+Grading at Sat May 16 15:20:48 UTC 2020
 Compiling deck.c -> deck.o
 Compiling eval.c -> eval.o
 Compiling cards.c -> cards.o
@@ -19,102 +19,117 @@ Testing with 4 hands
 Testing with 5 hands
 Testing with 6 hands
 Valgrind reported errors:
-==402== Memcheck, a memory error detector
-==402== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==402== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==402== Command: ./tester brd
-==402== Parent PID: 401
-==402== 
-==402== Invalid read of size 4
-==402==    at 0x402134: deck_contains (in /graderhome/work/c4prj1_deck/tester)
-==402==    by 0x403459: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==402==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==402==  Address 0x52052b0 is 0 bytes inside a block of size 8 free'd
-==402==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==402==    by 0x4020D3: free_deck (in /graderhome/work/c4prj1_deck/tester)
-==402==    by 0x402099: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==402==    by 0x4034AC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==402==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==402==  Block was alloc'd at
-==402==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==402==    by 0x403485: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==402==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==402== 
-==402== Invalid read of size 4
-==402==    at 0x402134: deck_contains (in /graderhome/work/c4prj1_deck/tester)
-==402==    by 0x401F41: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==402==    by 0x402089: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==402==    by 0x4034AC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==402==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==402==  Address 0x52052b0 is 0 bytes inside a block of size 8 free'd
-==402==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==402==    by 0x4020D3: free_deck (in /graderhome/work/c4prj1_deck/tester)
-==402==    by 0x402099: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==402==    by 0x4034AC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==402==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==402==  Block was alloc'd at
-==402==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==402==    by 0x403485: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==402==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==402== 
-==402== Invalid read of size 4
-==402==    at 0x402152: deck_contains (in /graderhome/work/c4prj1_deck/tester)
-==402==    by 0x401F41: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==402==    by 0x402089: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==402==    by 0x4034AC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==402==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==402==  Address 0x52052b4 is 4 bytes inside a block of size 8 free'd
-==402==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==402==    by 0x4020D3: free_deck (in /graderhome/work/c4prj1_deck/tester)
-==402==    by 0x402099: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==402==    by 0x4034AC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==402==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==402==  Block was alloc'd at
-==402==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==402==    by 0x403485: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==402==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==402== 
-==402== Invalid free() / delete / delete[] / realloc()
-==402==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==402==    by 0x4020D3: free_deck (in /graderhome/work/c4prj1_deck/tester)
-==402==    by 0x402099: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==402==    by 0x4034AC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==402==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==402==  Address 0x52052b0 is 0 bytes inside a block of size 8 free'd
-==402==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==402==    by 0x4020D3: free_deck (in /graderhome/work/c4prj1_deck/tester)
-==402==    by 0x402099: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==402==    by 0x4034AC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==402==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==402==  Block was alloc'd at
-==402==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==402==    by 0x403485: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==402==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==402== 
-==402== Invalid free() / delete / delete[] / realloc()
-==402==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==402==    by 0x4036D7: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==402==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==402==  Address 0x52052b0 is 0 bytes inside a block of size 8 free'd
-==402==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==402==    by 0x4020D3: free_deck (in /graderhome/work/c4prj1_deck/tester)
-==402==    by 0x402099: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==402==    by 0x4034AC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==402==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==402==  Block was alloc'd at
-==402==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==402==    by 0x403485: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==402==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==402== 
-==402== 
-==402== HEAP SUMMARY:
-==402==     in use at exit: 0 bytes in 0 blocks
-==402==   total heap usage: 6,955 allocs, 7,858 frees, 446,872 bytes allocated
-==402== 
-==402== All heap blocks were freed -- no leaks are possible
-==402== 
-==402== For counts of detected and suppressed errors, rerun with: -v
-==402== ERROR SUMMARY: 37251 errors from 5 contexts (suppressed: 0 from 0)
+==579== Memcheck, a memory error detector
+==579== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==579== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==579== Command: ./tester brd
+==579== Parent PID: 578
+==579== 
+==579== Invalid read of size 8
+==579==    at 0x402135: deck_contains (in /graderhome/work/c4prj1_deck/tester)
+==579==    by 0x403479: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==579==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==579==  Address 0x52052b0 is 0 bytes inside a block of size 8 free'd
+==579==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==579==    by 0x4020D3: free_deck (in /graderhome/work/c4prj1_deck/tester)
+==579==    by 0x402099: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==579==    by 0x4034CC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==579==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==579==  Block was alloc'd at
+==579==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==579==    by 0x4034A5: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==579==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==579== 
+==579== Invalid read of size 8
+==579==    at 0x402156: deck_contains (in /graderhome/work/c4prj1_deck/tester)
+==579==    by 0x403479: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==579==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==579==  Address 0x52052b0 is 0 bytes inside a block of size 8 free'd
+==579==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==579==    by 0x4020D3: free_deck (in /graderhome/work/c4prj1_deck/tester)
+==579==    by 0x402099: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==579==    by 0x4034CC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==579==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==579==  Block was alloc'd at
+==579==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==579==    by 0x4034A5: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==579==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==579== 
+==579== Invalid read of size 8
+==579==    at 0x402135: deck_contains (in /graderhome/work/c4prj1_deck/tester)
+==579==    by 0x401F41: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==579==    by 0x402089: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==579==    by 0x4034CC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==579==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==579==  Address 0x52052b0 is 0 bytes inside a block of size 8 free'd
+==579==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==579==    by 0x4020D3: free_deck (in /graderhome/work/c4prj1_deck/tester)
+==579==    by 0x402099: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==579==    by 0x4034CC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==579==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==579==  Block was alloc'd at
+==579==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==579==    by 0x4034A5: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==579==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==579== 
+==579== Invalid read of size 8
+==579==    at 0x402156: deck_contains (in /graderhome/work/c4prj1_deck/tester)
+==579==    by 0x401F41: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==579==    by 0x402089: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==579==    by 0x4034CC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==579==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==579==  Address 0x52052b0 is 0 bytes inside a block of size 8 free'd
+==579==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==579==    by 0x4020D3: free_deck (in /graderhome/work/c4prj1_deck/tester)
+==579==    by 0x402099: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==579==    by 0x4034CC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==579==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==579==  Block was alloc'd at
+==579==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==579==    by 0x4034A5: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==579==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==579== 
+==579== Invalid free() / delete / delete[] / realloc()
+==579==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==579==    by 0x4020D3: free_deck (in /graderhome/work/c4prj1_deck/tester)
+==579==    by 0x402099: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==579==    by 0x4034CC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==579==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==579==  Address 0x52052b0 is 0 bytes inside a block of size 8 free'd
+==579==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==579==    by 0x4020D3: free_deck (in /graderhome/work/c4prj1_deck/tester)
+==579==    by 0x402099: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==579==    by 0x4034CC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==579==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==579==  Block was alloc'd at
+==579==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==579==    by 0x4034A5: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==579==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==579== 
+==579== Invalid free() / delete / delete[] / realloc()
+==579==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==579==    by 0x4036F7: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==579==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==579==  Address 0x52052b0 is 0 bytes inside a block of size 8 free'd
+==579==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==579==    by 0x4020D3: free_deck (in /graderhome/work/c4prj1_deck/tester)
+==579==    by 0x402099: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==579==    by 0x4034CC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==579==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==579==  Block was alloc'd at
+==579==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==579==    by 0x4034A5: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==579==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==579== 
+==579== 
+==579== HEAP SUMMARY:
+==579==     in use at exit: 0 bytes in 0 blocks
+==579==   total heap usage: 6,955 allocs, 7,858 frees, 446,872 bytes allocated
+==579== 
+==579== All heap blocks were freed -- no leaks are possible
+==579== 
+==579== For counts of detected and suppressed errors, rerun with: -v
+==579== ERROR SUMMARY: 41033 errors from 6 contexts (suppressed: 0 from 0)
 Testing get_match_count(deck_t *)
 - Test passed
 
