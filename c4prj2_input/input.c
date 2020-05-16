@@ -37,7 +37,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
   deck->n_cards=0;
 
   for (int i=0; i<strlen(str); i++){
-    if(str[i] == ' ') continue;
+    if(str[i] == ' ' || str[i] == '\n') continue;
 
     if(str[i] != '?') {
       card_t card = card_from_letters(str[i], str[i+1]);
