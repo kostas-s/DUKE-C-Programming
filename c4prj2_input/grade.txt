@@ -1,34 +1,13 @@
-Grading at Sat May 16 18:53:24 UTC 2020
+Grading at Sat May 16 18:56:11 UTC 2020
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
 Compiling future.c -> future.o
-Linking input.o, future.o deck.o, cards.o, and our tester
-Testing with input file with 
- o 1 hand
- o No unknown/future cards
-Your file matched the expected output
-Test case passed
-Testing with input file with 
- o Many hands
- o No unknown/future cards
-Your file matched the expected output
-Test case passed
-Testing with input file with 
- o Many hands
- o 1 unknown/future cards per hand
-Your file matched the expected output
-Test case passed
-Testing with input file with 
- o Many hands
- o Many unknown/future cards per hand
-Line_7_did_not_match
-Line_14_did_not_match
-Line_21_did_not_match
-Line_28_did_not_match
-Line_35_did_not_match
-Line_42_did_not_match
-Your file did not match the expected ouput
-Test case failed
+future.c: In function ‘future_cards_from_deck’:
+future.c:41:14: error: unused variable ‘temp’ [-Werror=unused-variable]
+       card_t temp = *(deck->cards[i]);
+              ^
+cc1: all warnings being treated as errors
+Compilation of future.c failed
 
-Overall Grade: B
+Overall Grade: F
