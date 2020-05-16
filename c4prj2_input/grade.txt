@@ -1,0 +1,198 @@
+Grading at Sat May 16 18:30:12 UTC 2020
+Compiling cards.c -> cards.o
+Compiling deck.c -> deck.o
+Compiling input.c -> input.o
+Compiling future.c -> future.o
+Linking input.o, future.o deck.o, cards.o, and our tester
+Testing with input file with 
+ o 1 hand
+ o No unknown/future cards
+Valgrind reported errors:
+==296== Memcheck, a memory error detector
+==296== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==296== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==296== Command: ./tester hands.txt draw.txt
+==296== Parent PID: 295
+==296== 
+==296== Conditional jump or move depends on uninitialised value(s)
+==296==    at 0x40160C: assert_card_valid (in /graderhome/work/c4prj2_input/tester)
+==296==    by 0x4018AA: card_from_letters (in /graderhome/work/c4prj2_input/tester)
+==296==    by 0x400C3F: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==296==    by 0x400B10: read_input (in /graderhome/work/c4prj2_input/tester)
+==296==    by 0x401C4F: main (test-input.c:69)
+==296== 
+==296== Conditional jump or move depends on uninitialised value(s)
+==296==    at 0x401614: assert_card_valid (in /graderhome/work/c4prj2_input/tester)
+==296==    by 0x4018AA: card_from_letters (in /graderhome/work/c4prj2_input/tester)
+==296==    by 0x400C3F: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==296==    by 0x400B10: read_input (in /graderhome/work/c4prj2_input/tester)
+==296==    by 0x401C4F: main (test-input.c:69)
+==296== 
+==296== 
+==296== Process terminating with default action of signal 6 (SIGABRT): dumping core
+==296==    at 0x4E6F428: raise (raise.c:54)
+==296==    by 0x4E71029: abort (abort.c:89)
+==296==    by 0x4E67BD6: __assert_fail_base (assert.c:92)
+==296==    by 0x4E67C81: __assert_fail (assert.c:101)
+==296==    by 0x40162E: assert_card_valid (in /graderhome/work/c4prj2_input/tester)
+==296==    by 0x4018AA: card_from_letters (in /graderhome/work/c4prj2_input/tester)
+==296==    by 0x400C3F: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==296==    by 0x400B10: read_input (in /graderhome/work/c4prj2_input/tester)
+==296==    by 0x401C4F: main (test-input.c:69)
+==296== 
+==296== HEAP SUMMARY:
+==296==     in use at exit: 808 bytes in 12 blocks
+==296==   total heap usage: 21 allocs, 9 frees, 5,265 bytes allocated
+==296== 
+==296== LEAK SUMMARY:
+==296==    definitely lost: 0 bytes in 0 blocks
+==296==    indirectly lost: 0 bytes in 0 blocks
+==296==      possibly lost: 0 bytes in 0 blocks
+==296==    still reachable: 808 bytes in 12 blocks
+==296==         suppressed: 0 bytes in 0 blocks
+==296== Rerun with --leak-check=full to see details of leaked memory
+==296== 
+==296== For counts of detected and suppressed errors, rerun with: -v
+==296== Use --track-origins=yes to see where uninitialised values come from
+==296== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+Testing with input file with 
+ o Many hands
+ o No unknown/future cards
+Valgrind reported errors:
+==301== Memcheck, a memory error detector
+==301== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==301== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==301== Command: ./tester hands.txt draw.txt
+==301== Parent PID: 300
+==301== 
+==301== Conditional jump or move depends on uninitialised value(s)
+==301==    at 0x40160C: assert_card_valid (in /graderhome/work/c4prj2_input/tester)
+==301==    by 0x4018AA: card_from_letters (in /graderhome/work/c4prj2_input/tester)
+==301==    by 0x400C3F: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==301==    by 0x400B10: read_input (in /graderhome/work/c4prj2_input/tester)
+==301==    by 0x401C4F: main (test-input.c:69)
+==301== 
+==301== Conditional jump or move depends on uninitialised value(s)
+==301==    at 0x401614: assert_card_valid (in /graderhome/work/c4prj2_input/tester)
+==301==    by 0x4018AA: card_from_letters (in /graderhome/work/c4prj2_input/tester)
+==301==    by 0x400C3F: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==301==    by 0x400B10: read_input (in /graderhome/work/c4prj2_input/tester)
+==301==    by 0x401C4F: main (test-input.c:69)
+==301== 
+==301== 
+==301== Process terminating with default action of signal 6 (SIGABRT): dumping core
+==301==    at 0x4E6F428: raise (raise.c:54)
+==301==    by 0x4E71029: abort (abort.c:89)
+==301==    by 0x4E67BD6: __assert_fail_base (assert.c:92)
+==301==    by 0x4E67C81: __assert_fail (assert.c:101)
+==301==    by 0x40162E: assert_card_valid (in /graderhome/work/c4prj2_input/tester)
+==301==    by 0x4018AA: card_from_letters (in /graderhome/work/c4prj2_input/tester)
+==301==    by 0x400C3F: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==301==    by 0x400B10: read_input (in /graderhome/work/c4prj2_input/tester)
+==301==    by 0x401C4F: main (test-input.c:69)
+==301== 
+==301== HEAP SUMMARY:
+==301==     in use at exit: 808 bytes in 12 blocks
+==301==   total heap usage: 21 allocs, 9 frees, 5,265 bytes allocated
+==301== 
+==301== LEAK SUMMARY:
+==301==    definitely lost: 0 bytes in 0 blocks
+==301==    indirectly lost: 0 bytes in 0 blocks
+==301==      possibly lost: 0 bytes in 0 blocks
+==301==    still reachable: 808 bytes in 12 blocks
+==301==         suppressed: 0 bytes in 0 blocks
+==301== Rerun with --leak-check=full to see details of leaked memory
+==301== 
+==301== For counts of detected and suppressed errors, rerun with: -v
+==301== Use --track-origins=yes to see where uninitialised values come from
+==301== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+Testing with input file with 
+ o Many hands
+ o 1 unknown/future cards per hand
+Valgrind reported errors:
+==307== Memcheck, a memory error detector
+==307== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==307== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==307== Command: ./tester h.txt d.txt
+==307== Parent PID: 306
+==307== 
+==307== Invalid write of size 8
+==307==    at 0x400ED5: add_future_card (in /graderhome/work/c4prj2_input/tester)
+==307==    by 0x400D2B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==307==    by 0x400B10: read_input (in /graderhome/work/c4prj2_input/tester)
+==307==    by 0x401C4F: main (test-input.c:69)
+==307==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==307== 
+==307== 
+==307== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==307==  Access not within mapped region at address 0x0
+==307==    at 0x400ED5: add_future_card (in /graderhome/work/c4prj2_input/tester)
+==307==    by 0x400D2B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==307==    by 0x400B10: read_input (in /graderhome/work/c4prj2_input/tester)
+==307==    by 0x401C4F: main (test-input.c:69)
+==307==  If you believe this happened as a result of a stack
+==307==  overflow in your program's main thread (unlikely but
+==307==  possible), you can try to increase the size of the
+==307==  main thread stack using the --main-stacksize= flag.
+==307==  The main thread stack size used in this run was 8388608.
+==307== 
+==307== HEAP SUMMARY:
+==307==     in use at exit: 824 bytes in 13 blocks
+==307==   total heap usage: 20 allocs, 7 frees, 5,088 bytes allocated
+==307== 
+==307== LEAK SUMMARY:
+==307==    definitely lost: 0 bytes in 0 blocks
+==307==    indirectly lost: 0 bytes in 0 blocks
+==307==      possibly lost: 0 bytes in 0 blocks
+==307==    still reachable: 824 bytes in 13 blocks
+==307==         suppressed: 0 bytes in 0 blocks
+==307== Rerun with --leak-check=full to see details of leaked memory
+==307== 
+==307== For counts of detected and suppressed errors, rerun with: -v
+==307== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+Testing with input file with 
+ o Many hands
+ o Many unknown/future cards per hand
+Valgrind reported errors:
+==313== Memcheck, a memory error detector
+==313== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==313== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==313== Command: ./tester i1 i2
+==313== Parent PID: 312
+==313== 
+==313== Invalid write of size 8
+==313==    at 0x400ED5: add_future_card (in /graderhome/work/c4prj2_input/tester)
+==313==    by 0x400D2B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==313==    by 0x400B10: read_input (in /graderhome/work/c4prj2_input/tester)
+==313==    by 0x401C4F: main (test-input.c:69)
+==313==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==313== 
+==313== 
+==313== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==313==  Access not within mapped region at address 0x0
+==313==    at 0x400ED5: add_future_card (in /graderhome/work/c4prj2_input/tester)
+==313==    by 0x400D2B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==313==    by 0x400B10: read_input (in /graderhome/work/c4prj2_input/tester)
+==313==    by 0x401C4F: main (test-input.c:69)
+==313==  If you believe this happened as a result of a stack
+==313==  overflow in your program's main thread (unlikely but
+==313==  possible), you can try to increase the size of the
+==313==  main thread stack using the --main-stacksize= flag.
+==313==  The main thread stack size used in this run was 8388608.
+==313== 
+==313== HEAP SUMMARY:
+==313==     in use at exit: 776 bytes in 10 blocks
+==313==   total heap usage: 14 allocs, 4 frees, 4,920 bytes allocated
+==313== 
+==313== LEAK SUMMARY:
+==313==    definitely lost: 0 bytes in 0 blocks
+==313==    indirectly lost: 0 bytes in 0 blocks
+==313==      possibly lost: 0 bytes in 0 blocks
+==313==    still reachable: 776 bytes in 10 blocks
+==313==         suppressed: 0 bytes in 0 blocks
+==313== Rerun with --leak-check=full to see details of leaked memory
+==313== 
+==313== For counts of detected and suppressed errors, rerun with: -v
+==313== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+
+Overall Grade: F
