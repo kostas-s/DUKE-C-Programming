@@ -1,4 +1,4 @@
-Grading at Sat May 16 15:25:14 UTC 2020
+Grading at Sat May 16 15:28:42 UTC 2020
 Compiling deck.c -> deck.o
 Compiling eval.c -> eval.o
 Compiling cards.c -> cards.o
@@ -13,13 +13,47 @@ Testing make_deck_exclude(deck_t *)
 - Test passed
 Testing build_remaining_deck(deck_t **, size_t)
 Testing with 1 hand
-Testing with 2 hands
-Testing with 3 hands
-Testing with 4 hands
-Testing with 5 hands
-Testing with 6 hands
-- Test passed
+timeout: the monitored command dumped core
+Valgrind reported errors:
+==931== Memcheck, a memory error detector
+==931== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==931== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==931== Command: ./tester brd
+==931== Parent PID: 930
+==931== 
+==931== Invalid write of size 8
+==931==    at 0x401FF3: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==931==    by 0x40347C: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==931==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==931==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==931== 
+==931== 
+==931== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==931==  Access not within mapped region at address 0x0
+==931==    at 0x401FF3: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==931==    by 0x40347C: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==931==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==931==  If you believe this happened as a result of a stack
+==931==  overflow in your program's main thread (unlikely but
+==931==  possible), you can try to increase the size of the
+==931==  main thread stack using the --main-stacksize= flag.
+==931==  The main thread stack size used in this run was 8388608.
+==931== 
+==931== HEAP SUMMARY:
+==931==     in use at exit: 96 bytes in 9 blocks
+==931==   total heap usage: 10 allocs, 1 frees, 4,192 bytes allocated
+==931== 
+==931== LEAK SUMMARY:
+==931==    definitely lost: 0 bytes in 0 blocks
+==931==    indirectly lost: 0 bytes in 0 blocks
+==931==      possibly lost: 0 bytes in 0 blocks
+==931==    still reachable: 96 bytes in 9 blocks
+==931==         suppressed: 0 bytes in 0 blocks
+==931== Rerun with --leak-check=full to see details of leaked memory
+==931== 
+==931== For counts of detected and suppressed errors, rerun with: -v
+==931== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
 Testing get_match_count(deck_t *)
 - Test passed
 
-Overall Grade: A
+Overall Grade: B
