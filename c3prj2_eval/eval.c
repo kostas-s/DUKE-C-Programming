@@ -334,10 +334,10 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
 unsigned * get_match_counts(deck_t * hand) {
   unsigned * elems=malloc(sizeof(* elems)*hand->n_cards);
   size_t num = hand->n_cards;
-  //initialize elems to be safe
-  for (int i=0; i< num; i++){
+  //  initialize elems to be safe
+   for (int i=0; i< num; i++){
     elems[i]=0;
-  }
+   }
   
   for (int i=0; i< num; i++){
     if (elems[i]<1){

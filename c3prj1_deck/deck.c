@@ -5,19 +5,17 @@
 
 void add_card_to(deck_t * deck, card_t c){
   // create a card and assign c value+suit to it
-  card_t * card = malloc(sizeof(* card));  
+   card_t * card = malloc(sizeof(* card));
   card->value = c.value;
   card->suit = c.suit;
 
   // increase size of deck
   deck->n_cards++;
-  size_t num = deck->n_cards;
-  deck->cards = realloc(deck->cards, (num+1)*sizeof(deck->cards));
-
-  // place new card in deck
+  size_t num=deck->n_cards;
+  deck->cards = realloc(deck->cards, num*sizeof(deck->cards));
   deck->cards[num-1]=card;
 }
-
+ 
 card_t * add_empty_card(deck_t * deck){
   card_t * card = malloc(sizeof(* card));
   card->value = 0;
@@ -31,9 +29,9 @@ card_t * add_empty_card(deck_t * deck){
 }
 
 deck_t * make_deck_exclude(deck_t * excluded_cards){
-  deck_t * deck = malloc(sizeof(* deck));
-  deck->n_cards = 0;
-  deck->cards= NULL;
+  deck_t * deck=malloc(sizeof(* deck));
+  deck->cards=NULL;
+  deck->n_cards=0;
   for(unsigned i=0; i<52; i++){
     card_t card = card_from_num(i);
 
@@ -43,6 +41,8 @@ deck_t * make_deck_exclude(deck_t * excluded_cards){
       add_card_to(deck, card);
     }
   }
+
+  
   return deck;
 
 }
@@ -51,22 +51,22 @@ deck_t * build_remaining_deck(deck_t ** hands, size_t n_hands){
   deck_t * deck = malloc(sizeof(* deck));
   deck->n_cards = 0;
   deck->cards = NULL;
-  int pos = 0;
+  //  int pos = 0;
   for (int h=0; h<n_hands; h++){
     // for each hands specific size copy cards from hand to deck. hands will be "h" cards in hands will be "c"
     for (int c=0; c<hands[h]->n_cards; c++){
       deck->cards=realloc(deck->cards, (sizeof(* deck->cards)*(deck->n_cards+1)));
       //copy each card from current hand
-      deck->cards[pos]=hands[h]->cards[c];
+      deck->cards[deck->n_cards]=hands[h]->cards[c];
       deck->n_cards++;
-      pos++;
+      //      pos++;
     }
   }
   
   deck_t * ans = make_deck_exclude(deck);
-  free(deck);
-  free(deck->cards);
-  //free_deck(deck);
+  
+  free_deck(deck);
+  
   return ans;
 
   
@@ -85,7 +85,10 @@ void free_deck(deck_t * deck){
 
 int deck_contains(deck_t * d, card_t c){
   for (size_t i=0; i<(d->n_cards); i++) {
-    if (((d->cards[i]->value) == c.value) && ((d->cards[i]->suit)==c.suit)) return 1;
+    if (((d->cards[i]->value) == c.value) && ((d->cards[i]->suit)==c.suit)) {
+      //  printf("contained in deck");
+      return 1;
+    }
   }
   return 0;
 }
