@@ -5,14 +5,14 @@
 
 void add_card_to(deck_t * deck, card_t c){
   // create a card and assign c value+suit to it
-  card_t * card = malloc(sizeof(* card));
+  card_t * card = malloc(sizeof(* card));  
   card->value = c.value;
   card->suit = c.suit;
 
   // increase size of deck
   deck->n_cards++;
   size_t num = deck->n_cards;
-  deck->cards = realloc(deck->cards, num*sizeof(deck->cards));
+  deck->cards = realloc(deck->cards, (num+1)*sizeof(deck->cards));
 
   // place new card in deck
   deck->cards[num-1]=card;
@@ -34,28 +34,15 @@ deck_t * make_deck_exclude(deck_t * excluded_cards){
   deck_t * deck = malloc(sizeof(* deck));
   deck->n_cards = 0;
   deck->cards= NULL;
-  // get num equivalent of cards to exclude
-  int exc_nums[excluded_cards->n_cards];
-  size_t new_size = 52-excluded_cards->n_cards;
-  for (int i=0; i<excluded_cards->n_cards; i++){
-    exc_nums[i] = excluded_cards->cards[i]->value + (excluded_cards->cards[i]->suit*13);
-  }
-  
-  deck->n_cards = new_size;
-  unsigned j=0;
-  for (int i=0; i<new_size; i++){
+  for(unsigned i=0; i<52; i++){
+    card_t card = card_from_num(i);
 
-    for (int x=0; x<excluded_cards->n_cards; x++){
-      if (exc_nums[x]==j) j++;
-      // restart checking in case next number in exc nums is smaller
-      x=0;
+
+    //Don't add to deck if it is one of the excluded
+    if (deck_contains(excluded_cards,card)==0){
+      add_card_to(deck, card);
     }
-    card_t ans = card_from_num(j);
-    deck->cards[i]->value = ans.value;
-    deck->cards[i]->suit = ans.suit;
-    j++;
   }
-
   return deck;
 
 }
@@ -77,7 +64,9 @@ deck_t * build_remaining_deck(deck_t ** hands, size_t n_hands){
   }
   
   deck_t * ans = make_deck_exclude(deck);
-  free_deck(deck);
+  free(deck);
+  free(deck->cards);
+  //free_deck(deck);
   return ans;
 
   
