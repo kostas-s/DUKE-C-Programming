@@ -49,15 +49,16 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
       char str_n[strlen(str)];
       int n=0;
       i++;
-      while (! (str[i] == ' '|| str[i] == '\n' )){
+      while (!(str[i] == ' '|| str[i] == '\n' )){
 	str_n[n]=str[i];
 	i++;
 	n++;
+      }
 	str_n[n]= '\0';
 	add_future_card(fc, atoi(str_n), add_empty_card(deck));
       }
     }
-  }
+  
   if (deck->n_cards < 5) {
     fprintf(stderr, "Hands smaller than 5 cards");
     return NULL;
