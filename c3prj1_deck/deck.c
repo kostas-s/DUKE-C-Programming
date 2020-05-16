@@ -49,52 +49,34 @@ deck_t * make_deck_exclude(deck_t * excluded_cards){
 
 deck_t * build_remaining_deck(deck_t ** hands, size_t n_hands){
 
-  /* deck_t *deck = malloc(sizeof(*deck)); */
-  /* deck->n_cards = 0; */
-  /* deck->cards = NULL; */
-
-  /* deck_t *hand; */
-  /* card_t *card; */
-  /* for (size_t i = 0; i < n_hands; i++) { */
-  /*   hand = hands[i]; */
-    
-  /*   for (size_t j = 0; j < hand->n_cards; j++) { */
-  /*     card = hand->cards[j]; */
-  /*     if (card->value != 0) { */
-  /* 	if (deck_contains(deck, *card) == 0) { */
-  /* 	  add_card_to(deck, *card); */
-  /* 	} */
-  /*     } */
-  /*   } */
-  /* } */
-  /* deck_t * deck_ans; */
-  /* deck_ans = make_deck_exclude(deck); */
-  /* free_deck(deck); */
-  /* return deck_ans; */
-
-
-  deck_t * deck = malloc(sizeof(* deck));
+  deck_t *deck = malloc(sizeof(*deck));
   deck->n_cards = 0;
   deck->cards = NULL;
-  //  int pos = 0;
-  for (int h=0; h<n_hands; h++){
-    // for each hands specific size copy cards from hand to deck. hands will be "h" cards in hands will be "c"
-    for (int c=0; c<hands[h]->n_cards; c++){
-      //      deck->cards=realloc(deck->cards, (sizeof(* deck->cards)*(deck->n_cards+1)));
-      //copy each card from current hand
-      deck->cards[deck->n_cards]=hands[h]->cards[c];
-      deck->n_cards++;
-      //      pos++;
+
+  deck_t *hand;
+  card_t *card;
+
+  // get each hand sent to the function
+  for (size_t i = 0; i < n_hands; i++) {
+    hand = hands[i];
+
+    
+    for (size_t j = 0; j < hand->n_cards; j++) {
+      card = hand->cards[j];
+      if (card->value!=0){
+	
+      if (!deck_contains(deck, * card)) {
+  	  add_card_to(deck,* card);
+  	}
+      }
     }
   }
-  
-  deck_t * ans = make_deck_exclude(deck);
-  
+  deck_t * deck_ans;
+  deck_ans = make_deck_exclude(deck);
   free_deck(deck);
-  
-  return ans;
+  return deck_ans;
 
-  
+
 }
 
 void free_deck(deck_t * deck){
