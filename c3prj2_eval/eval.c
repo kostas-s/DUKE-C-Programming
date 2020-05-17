@@ -331,38 +331,38 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
 //implementation in eval-c4.o) so that the
 //other functions we have provided can make
 //use of get_match_counts.
-unsigned * get_match_counts(deck_t * hand) {
-  unsigned * elems=malloc(sizeof(* elems)*hand->n_cards);
-  size_t num = hand->n_cards;
-  //  initialize elems to be safe
-   for (int i=0; i< num; i++){
-    elems[i]=0;
-   }
+/* unsigned * get_match_counts(deck_t * hand) { */
+/*   unsigned * elems=malloc(sizeof(* elems)*hand->n_cards); */
+/*   size_t num = hand->n_cards; */
+/*   //  initialize elems to be safe */
+/*    for (int i=0; i< num; i++){ */
+/*     elems[i]=0; */
+/*    } */
   
-  for (int i=0; i< num; i++){
-    if (elems[i]<1){
-      //check value in position i against all other values and get the total number of counts
-      unsigned count=1;
-      for (int x=0; x<num; x++){
-	if (x==i) continue;
-	if (hand->cards[i]->value==hand->cards[x]->value){
-	  count++;
-	}
-      }
-      // assign count to current element
-      elems[i]=count;
+/*   for (int i=0; i< num; i++){ */
+/*     if (elems[i]<1){ */
+/*       //check value in position i against all other values and get the total number of counts */
+/*       unsigned count=1; */
+/*       for (int x=0; x<num; x++){ */
+/* 	if (x==i) continue; */
+/* 	if (hand->cards[i]->value==hand->cards[x]->value){ */
+/* 	  count++; */
+/* 	} */
+/*       } */
+/*       // assign count to current element */
+/*       elems[i]=count; */
 
-      // assign count to same elements
-      for (int x=0; x<num; x++){
-	if (x==i) continue;
-	if (hand->cards[i]->value==hand->cards[x]->value){
-	  elems[x]=count;
-	}
-      }
-    }
-  }
-  return elems;
-}
+/*       // assign count to same elements */
+/*       for (int x=0; x<num; x++){ */
+/* 	if (x==i) continue; */
+/* 	if (hand->cards[i]->value==hand->cards[x]->value){ */
+/* 	  elems[x]=count; */
+/* 	} */
+/*       } */
+/*     } */
+/*   } */
+/*   return elems; */
+/* } */
 
 // We provide the below functions.  You do NOT need to modify them
 // In fact, you should not modify them!
