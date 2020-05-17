@@ -1,11 +1,9 @@
-Grading at Sun May 17 14:58:36 UTC 2020
+Grading at Sun May 17 15:00:53 UTC 2020
 Compiling your code
 rm -f test poker cards.o my-test-main.o *~
 cc -ggdb3 -Wall -Werror -pedantic -std=gnu99 -g   -c -o deck.o deck.c
 cc -ggdb3 -Wall -Werror -pedantic -std=gnu99 -g   -c -o eval.o eval.c
-cc -ggdb3 -Wall -Werror -pedantic -std=gnu99 -g   -c -o cards.o cards.c
-gcc -o test-eval -ggdb3 deck.o deck-c4.o eval-c4.o eval.o test-eval.o cards.o input.o future.o
-Makefile:6: recipe for target 'test-eval' failed
+<builtin>: recipe for target 'eval.o' failed
 'make test-eval' failed.
 
 Overall Grade: F
