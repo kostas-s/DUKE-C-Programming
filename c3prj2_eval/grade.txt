@@ -1,49 +1,11 @@
-Grading at Fri May 15 16:25:59 UTC 2020
+Grading at Sun May 17 14:58:36 UTC 2020
 Compiling your code
 rm -f test poker cards.o my-test-main.o *~
 cc -ggdb3 -Wall -Werror -pedantic -std=gnu99 -g   -c -o deck.o deck.c
 cc -ggdb3 -Wall -Werror -pedantic -std=gnu99 -g   -c -o eval.o eval.c
 cc -ggdb3 -Wall -Werror -pedantic -std=gnu99 -g   -c -o cards.o cards.c
 gcc -o test-eval -ggdb3 deck.o deck-c4.o eval-c4.o eval.o test-eval.o cards.o input.o future.o
-Testcase 1: Trying hands with nothing
- Checking the output 
-Your file matched the expected output
- - Testcase passed
-Testcase 2: Trying hands with pairs
- Checking the output 
-Your file matched the expected output
- - Testcase passed
-Testcase 3: Trying hands with 2 pairs
- Checking the output 
-Your file matched the expected output
- - Testcase passed
-Testcase 4: Trying hands with 3 of a kind
- Checking the output 
-Your file matched the expected output
- - Testcase passed
-Testcase 5: Trying hands with straights
- Checking the output 
-Your file matched the expected output
- - Testcase passed
-Testcase 6: Trying hands with flushes
- Checking the output 
-Your file matched the expected output
- - Testcase passed
-Testcase 7: Trying hands with full houses
- Checking the output 
-Your file matched the expected output
- - Testcase passed
-Testcase 8: Trying hands with 4 of a kind
- Checking the output 
-Your file matched the expected output
- - Testcase passed
-Testcase 9: Trying hands with straight flushes
- Checking the output 
-Your file matched the expected output
- - Testcase passed
-Testcase 10: Trying each type of hand ranking
- Checking the output 
-Your file matched the expected output
- - Testcase passed
+Makefile:6: recipe for target 'test-eval' failed
+'make test-eval' failed.
 
-Overall Grade: A
+Overall Grade: F
