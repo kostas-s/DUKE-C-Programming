@@ -10,6 +10,14 @@
 
 
 
+void free_input(deck_t ** input, size_t num){
+  for (size_t i=0; i<num; i++){
+    free_deck(input[i]);
+  }
+  free(input);
+}
+
+
 int main(int argc, char ** argv) {
   if (argc > 3 || argc < 2) {
     fprintf(stderr, "Usage: enter hand and number of trials\n");
@@ -85,13 +93,11 @@ int main(int argc, char ** argv) {
     return EXIT_FAILURE;
   }
 
+  free_input(input, n_hands);
   free_deck(remaining_cards);
-  // free(fc);
-  for (int i=0; i<n_hands; i++){
-    free_deck(input[i]);
-  }
-  free_deck(fc->decks);
-  
+  for (size_t i=0; i<fc->n_decks; i++) free(fc->decks[i].cards);
+  free(fc->decks);
+  free(fc);
   
 
   return EXIT_SUCCESS;
