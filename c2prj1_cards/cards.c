@@ -134,30 +134,37 @@ card_t card_from_letters(char value_let, char suit_let) {
 }
 
 card_t card_from_num(unsigned c) {
-  card_t temp;
-  int cSuit=c/13;
-  int cVal=c%13;
-  switch(cSuit){
+  card_t ret_card;
+  int suit=c/13;
+  int value=c%13;
+  // assign cards to numbers as such: 0-12 are values 2-14 on suit SPADES,
+  // 13-25 suit HEARTS
+  // 26-38 suit DIAMONDS
+  // 39-51 suit CLUBS
+  switch(suit){
   case 0:
-    temp.suit=SPADES;
+    ret_card.suit=SPADES;
     break;
   case 1:
-    temp.suit=HEARTS;
+    ret_card.suit=HEARTS;
     break;
   case 2:
-    temp.suit=DIAMONDS;
+    ret_card.suit=DIAMONDS;
     break;
   case 3:
-    temp.suit=CLUBS;
+    ret_card.suit=CLUBS;
     break;
-  }
-  if (cVal>=2){
-    temp.value=cVal;
-  }else{
-    temp.value=cVal+13;
+    
   }
 
-  return temp;
+  //
+  if (value>=2){
+    ret_card.value=value;
+  }else{
+    ret_card.value=value+13;
+  }
+  
+  return ret_card;
 }
 
 /* int main(){ */
