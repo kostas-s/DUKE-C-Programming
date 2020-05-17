@@ -70,7 +70,10 @@ int main(int argc, char ** argv) {
     int index=0;
     for( int x = 1; x<n_hands; x++){
       if (compare_hands(input[index], input[x])==0) inc_array_at = n_hands;
-      if (compare_hands(input[index], input[x])<0) inc_array_at = x;
+      if (compare_hands(input[index], input[x])<0) {
+	inc_array_at = x;
+	index=x;
+      }
     }
     w_array[inc_array_at]++;
   }
