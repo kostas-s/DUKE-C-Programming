@@ -1,0 +1,358 @@
+Grading at Sun May 17 14:30:03 UTC 2020
+Running 'make clean' to do a clean build of your project
+rm -rf *.o poker *~
+Running 'make poker OTHERFLAGS=-O3' to build your project
+gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3   -c -o cards.o cards.c
+gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3   -c -o deck.o deck.c
+gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3   -c -o eval.o eval.c
+gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3   -c -o future.o future.c
+gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3   -c -o input.o input.c
+gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3   -c -o main.o main.c
+gcc -o poker -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3 cards.o deck.o eval.o future.o input.o main.o
+ - Starting with some Texas Hold'em hands
+Running a simulation with 20000 draws for 2 hands...
+Valgrind reported errors:
+==830== Memcheck, a memory error detector
+==830== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==830== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==830== Command: ./poker inp.txt 20000
+==830== Parent PID: 829
+==830== 
+==830== Invalid free() / delete / delete[] / realloc()
+==830==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==830==    by 0x4013A8: free_deck (deck.c:84)
+==830==    by 0x400BDE: main (main.c:93)
+==830==  Address 0x52055e0 is 0 bytes inside a block of size 8 free'd
+==830==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==830==    by 0x4013A8: free_deck (deck.c:84)
+==830==    by 0x400BCC: main (main.c:91)
+==830==  Block was alloc'd at
+==830==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==830==    by 0x401090: add_empty_card (deck.c:20)
+==830==    by 0x403195: hand_from_string (input.c:69)
+==830==    by 0x4032BF: read_input (input.c:20)
+==830==    by 0x400A5E: main (main.c:36)
+==830== 
+==830== 
+==830== HEAP SUMMARY:
+==830==     in use at exit: 96 bytes in 6 blocks
+==830==   total heap usage: 80,052 allocs, 80,048 frees, 2,256,824 bytes allocated
+==830== 
+==830== LEAK SUMMARY:
+==830==    definitely lost: 96 bytes in 6 blocks
+==830==    indirectly lost: 0 bytes in 0 blocks
+==830==      possibly lost: 0 bytes in 0 blocks
+==830==    still reachable: 0 bytes in 0 blocks
+==830==         suppressed: 0 bytes in 0 blocks
+==830== Rerun with --leak-check=full to see details of leaked memory
+==830== 
+==830== For counts of detected and suppressed errors, rerun with: -v
+==830== ERROR SUMMARY: 2 errors from 1 contexts (suppressed: 0 from 0)
+Running a simulation with 25000 draws for 3 hands...
+Valgrind reported errors:
+==835== Memcheck, a memory error detector
+==835== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==835== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==835== Command: ./poker inp.txt 25000
+==835== Parent PID: 834
+==835== 
+==835== Invalid free() / delete / delete[] / realloc()
+==835==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==835==    by 0x4013A8: free_deck (deck.c:84)
+==835==    by 0x400BDE: main (main.c:93)
+==835==  Address 0x52055e0 is 0 bytes inside a block of size 8 free'd
+==835==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==835==    by 0x4013A8: free_deck (deck.c:84)
+==835==    by 0x400BCC: main (main.c:91)
+==835==  Block was alloc'd at
+==835==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==835==    by 0x401090: add_empty_card (deck.c:20)
+==835==    by 0x403195: hand_from_string (input.c:69)
+==835==    by 0x4032BF: read_input (input.c:20)
+==835==    by 0x400A5E: main (main.c:36)
+==835== 
+==835== 
+==835== HEAP SUMMARY:
+==835==     in use at exit: 136 bytes in 6 blocks
+==835==   total heap usage: 200,155 allocs, 200,152 frees, 5,618,888 bytes allocated
+==835== 
+==835== LEAK SUMMARY:
+==835==    definitely lost: 136 bytes in 6 blocks
+==835==    indirectly lost: 0 bytes in 0 blocks
+==835==      possibly lost: 0 bytes in 0 blocks
+==835==    still reachable: 0 bytes in 0 blocks
+==835==         suppressed: 0 bytes in 0 blocks
+==835== Rerun with --leak-check=full to see details of leaked memory
+==835== 
+==835== For counts of detected and suppressed errors, rerun with: -v
+==835== ERROR SUMMARY: 3 errors from 1 contexts (suppressed: 0 from 0)
+Running a simulation with 25000 draws for 3 hands...
+Valgrind reported errors:
+==840== Memcheck, a memory error detector
+==840== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==840== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==840== Command: ./poker inp2.txt 25000
+==840== Parent PID: 839
+==840== 
+==840== Invalid free() / delete / delete[] / realloc()
+==840==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==840==    by 0x4013A8: free_deck (deck.c:84)
+==840==    by 0x400BDE: main (main.c:93)
+==840==  Address 0x52055e0 is 0 bytes inside a block of size 8 free'd
+==840==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==840==    by 0x4013A8: free_deck (deck.c:84)
+==840==    by 0x400BCC: main (main.c:91)
+==840==  Block was alloc'd at
+==840==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==840==    by 0x401090: add_empty_card (deck.c:20)
+==840==    by 0x403195: hand_from_string (input.c:69)
+==840==    by 0x4032BF: read_input (input.c:20)
+==840==    by 0x400A5E: main (main.c:36)
+==840== 
+==840== 
+==840== HEAP SUMMARY:
+==840==     in use at exit: 136 bytes in 6 blocks
+==840==   total heap usage: 200,143 allocs, 200,140 frees, 5,618,552 bytes allocated
+==840== 
+==840== LEAK SUMMARY:
+==840==    definitely lost: 136 bytes in 6 blocks
+==840==    indirectly lost: 0 bytes in 0 blocks
+==840==      possibly lost: 0 bytes in 0 blocks
+==840==    still reachable: 0 bytes in 0 blocks
+==840==         suppressed: 0 bytes in 0 blocks
+==840== Rerun with --leak-check=full to see details of leaked memory
+==840== 
+==840== For counts of detected and suppressed errors, rerun with: -v
+==840== ERROR SUMMARY: 3 errors from 1 contexts (suppressed: 0 from 0)
+Running a simulation with 25000 draws for 2 hands...
+Valgrind reported errors:
+==845== Memcheck, a memory error detector
+==845== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==845== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==845== Command: ./poker inp2.txt 25000
+==845== Parent PID: 844
+==845== 
+==845== Invalid free() / delete / delete[] / realloc()
+==845==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==845==    by 0x4013A8: free_deck (deck.c:84)
+==845==    by 0x400BDE: main (main.c:93)
+==845==  Address 0x52055e0 is 0 bytes inside a block of size 8 free'd
+==845==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==845==    by 0x4013A8: free_deck (deck.c:84)
+==845==    by 0x400BCC: main (main.c:91)
+==845==  Block was alloc'd at
+==845==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==845==    by 0x401090: add_empty_card (deck.c:20)
+==845==    by 0x403195: hand_from_string (input.c:69)
+==845==    by 0x4032BF: read_input (input.c:20)
+==845==    by 0x400A5E: main (main.c:36)
+==845== 
+==845== 
+==845== HEAP SUMMARY:
+==845==     in use at exit: 96 bytes in 6 blocks
+==845==   total heap usage: 100,150 allocs, 100,146 frees, 2,819,568 bytes allocated
+==845== 
+==845== LEAK SUMMARY:
+==845==    definitely lost: 96 bytes in 6 blocks
+==845==    indirectly lost: 0 bytes in 0 blocks
+==845==      possibly lost: 0 bytes in 0 blocks
+==845==    still reachable: 0 bytes in 0 blocks
+==845==         suppressed: 0 bytes in 0 blocks
+==845== Rerun with --leak-check=full to see details of leaked memory
+==845== 
+==845== For counts of detected and suppressed errors, rerun with: -v
+==845== ERROR SUMMARY: 2 errors from 1 contexts (suppressed: 0 from 0)
+Running a simulation with 80000 draws for 4 hands...
+Valgrind reported errors:
+==850== Memcheck, a memory error detector
+==850== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==850== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==850== Command: ./poker inp3.txt 80000
+==850== Parent PID: 849
+==850== 
+==850== Invalid free() / delete / delete[] / realloc()
+==850==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==850==    by 0x4013A8: free_deck (deck.c:84)
+==850==    by 0x400BDE: main (main.c:93)
+==850==  Address 0x5205800 is 0 bytes inside a block of size 8 free'd
+==850==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==850==    by 0x4013A8: free_deck (deck.c:84)
+==850==    by 0x400BCC: main (main.c:91)
+==850==  Block was alloc'd at
+==850==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==850==    by 0x401090: add_empty_card (deck.c:20)
+==850==    by 0x403195: hand_from_string (input.c:69)
+==850==    by 0x4032BF: read_input (input.c:20)
+==850==    by 0x400A5E: main (main.c:36)
+==850== 
+==850== 
+==850== HEAP SUMMARY:
+==850==     in use at exit: 80 bytes in 3 blocks
+==850==   total heap usage: 960,185 allocs, 960,186 frees, 26,898,216 bytes allocated
+==850== 
+==850== LEAK SUMMARY:
+==850==    definitely lost: 80 bytes in 3 blocks
+==850==    indirectly lost: 0 bytes in 0 blocks
+==850==      possibly lost: 0 bytes in 0 blocks
+==850==    still reachable: 0 bytes in 0 blocks
+==850==         suppressed: 0 bytes in 0 blocks
+==850== Rerun with --leak-check=full to see details of leaked memory
+==850== 
+==850== For counts of detected and suppressed errors, rerun with: -v
+==850== ERROR SUMMARY: 4 errors from 1 contexts (suppressed: 0 from 0)
+Running a simulation with 30000 draws for 2 hands...
+Valgrind reported errors:
+==855== Memcheck, a memory error detector
+==855== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==855== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==855== Command: ./poker inp.txt 30000
+==855== Parent PID: 854
+==855== 
+==855== Invalid free() / delete / delete[] / realloc()
+==855==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==855==    by 0x4013A8: free_deck (deck.c:84)
+==855==    by 0x400BDE: main (main.c:93)
+==855==  Address 0x5205800 is 0 bytes inside a block of size 8 free'd
+==855==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==855==    by 0x4013A8: free_deck (deck.c:84)
+==855==    by 0x400BCC: main (main.c:91)
+==855==  Block was alloc'd at
+==855==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==855==    by 0x401090: add_empty_card (deck.c:20)
+==855==    by 0x403195: hand_from_string (input.c:69)
+==855==    by 0x4032BF: read_input (input.c:20)
+==855==    by 0x400A5E: main (main.c:36)
+==855== 
+==855== 
+==855== HEAP SUMMARY:
+==855==     in use at exit: 48 bytes in 3 blocks
+==855==   total heap usage: 120,149 allocs, 120,148 frees, 3,378,544 bytes allocated
+==855== 
+==855== LEAK SUMMARY:
+==855==    definitely lost: 48 bytes in 3 blocks
+==855==    indirectly lost: 0 bytes in 0 blocks
+==855==      possibly lost: 0 bytes in 0 blocks
+==855==    still reachable: 0 bytes in 0 blocks
+==855==         suppressed: 0 bytes in 0 blocks
+==855== Rerun with --leak-check=full to see details of leaked memory
+==855== 
+==855== For counts of detected and suppressed errors, rerun with: -v
+==855== ERROR SUMMARY: 2 errors from 1 contexts (suppressed: 0 from 0)
+ - Next, few Seven Card Stud hands
+Running a simulation with 30000 draws for 2 hands...
+Valgrind reported errors:
+==860== Memcheck, a memory error detector
+==860== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==860== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==860== Command: ./poker inp.txt 30000
+==860== Parent PID: 859
+==860== 
+==860== Invalid free() / delete / delete[] / realloc()
+==860==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==860==    by 0x4013A8: free_deck (deck.c:84)
+==860==    by 0x400BDE: main (main.c:93)
+==860==  Address 0x5205740 is 0 bytes inside a block of size 8 free'd
+==860==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==860==    by 0x4013A8: free_deck (deck.c:84)
+==860==    by 0x400BCC: main (main.c:91)
+==860==  Block was alloc'd at
+==860==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==860==    by 0x401090: add_empty_card (deck.c:20)
+==860==    by 0x403195: hand_from_string (input.c:69)
+==860==    by 0x4032BF: read_input (input.c:20)
+==860==    by 0x400A5E: main (main.c:36)
+==860== 
+==860== 
+==860== HEAP SUMMARY:
+==860==     in use at exit: 88 bytes in 9 blocks
+==860==   total heap usage: 120,123 allocs, 120,115 frees, 3,378,392 bytes allocated
+==860== 
+==860== LEAK SUMMARY:
+==860==    definitely lost: 88 bytes in 9 blocks
+==860==    indirectly lost: 0 bytes in 0 blocks
+==860==      possibly lost: 0 bytes in 0 blocks
+==860==    still reachable: 0 bytes in 0 blocks
+==860==         suppressed: 0 bytes in 0 blocks
+==860== Rerun with --leak-check=full to see details of leaked memory
+==860== 
+==860== For counts of detected and suppressed errors, rerun with: -v
+==860== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+Running a simulation with 40000 draws for 3 hands...
+Valgrind reported errors:
+==865== Memcheck, a memory error detector
+==865== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==865== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==865== Command: ./poker inp2.txt 40000
+==865== Parent PID: 864
+==865== 
+==865== Invalid free() / delete / delete[] / realloc()
+==865==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==865==    by 0x4013A8: free_deck (deck.c:84)
+==865==    by 0x400BDE: main (main.c:93)
+==865==  Address 0x5205740 is 0 bytes inside a block of size 8 free'd
+==865==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==865==    by 0x4013A8: free_deck (deck.c:84)
+==865==    by 0x400BCC: main (main.c:91)
+==865==  Block was alloc'd at
+==865==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==865==    by 0x401090: add_empty_card (deck.c:20)
+==865==    by 0x403195: hand_from_string (input.c:69)
+==865==    by 0x4032BF: read_input (input.c:20)
+==865==    by 0x400A5E: main (main.c:36)
+==865== 
+==865== 
+==865== HEAP SUMMARY:
+==865==     in use at exit: 104 bytes in 10 blocks
+==865==   total heap usage: 319,843 allocs, 319,834 frees, 8,968,888 bytes allocated
+==865== 
+==865== LEAK SUMMARY:
+==865==    definitely lost: 104 bytes in 10 blocks
+==865==    indirectly lost: 0 bytes in 0 blocks
+==865==      possibly lost: 0 bytes in 0 blocks
+==865==    still reachable: 0 bytes in 0 blocks
+==865==         suppressed: 0 bytes in 0 blocks
+==865== Rerun with --leak-check=full to see details of leaked memory
+==865== 
+==865== For counts of detected and suppressed errors, rerun with: -v
+==865== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+ - Then one from a completely made up poker variant
+Running a simulation with 100000 draws for 6 hands...
+Valgrind reported errors:
+==870== Memcheck, a memory error detector
+==870== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==870== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==870== Command: ./poker whacky.txt 100000
+==870== Parent PID: 869
+==870== 
+==870== Invalid free() / delete / delete[] / realloc()
+==870==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==870==    by 0x4013A8: free_deck (deck.c:84)
+==870==    by 0x400BDE: main (main.c:93)
+==870==  Address 0x5205540 is 0 bytes inside a block of size 8 free'd
+==870==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==870==    by 0x4013A8: free_deck (deck.c:84)
+==870==    by 0x400BCC: main (main.c:91)
+==870==  Block was alloc'd at
+==870==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==870==    by 0x401090: add_empty_card (deck.c:20)
+==870==    by 0x403195: hand_from_string (input.c:69)
+==870==    by 0x4032BF: read_input (input.c:20)
+==870==    by 0x400A5E: main (main.c:36)
+==870== 
+==870== 
+==870== HEAP SUMMARY:
+==870==     in use at exit: 184 bytes in 7 blocks
+==870==   total heap usage: 1,998,979 allocs, 1,998,975 frees, 55,982,744 bytes allocated
+==870== 
+==870== LEAK SUMMARY:
+==870==    definitely lost: 184 bytes in 7 blocks
+==870==    indirectly lost: 0 bytes in 0 blocks
+==870==      possibly lost: 0 bytes in 0 blocks
+==870==    still reachable: 0 bytes in 0 blocks
+==870==         suppressed: 0 bytes in 0 blocks
+==870== Rerun with --leak-check=full to see details of leaked memory
+==870== 
+==870== For counts of detected and suppressed errors, rerun with: -v
+==870== ERROR SUMMARY: 3 errors from 1 contexts (suppressed: 0 from 0)
+
+Overall Grade: F
