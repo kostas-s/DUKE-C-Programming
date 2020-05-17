@@ -325,7 +325,7 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
 }
 
 
-
+unsigned * get_match_counts(deck_t * hand);
 //You will write this function in Course 4.
 //For now, we leave a prototype (and provide our
 //implementation in eval-c4.o) so that the
