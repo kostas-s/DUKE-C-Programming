@@ -1,4 +1,4 @@
-Grading at Sat May 16 15:34:10 UTC 2020
+Grading at Sun May 17 15:04:00 UTC 2020
 Compiling deck.c -> deck.o
 Compiling eval.c -> eval.o
 Compiling cards.c -> cards.o
