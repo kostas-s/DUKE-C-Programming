@@ -1,4 +1,4 @@
-Grading at Sun May 17 14:40:07 UTC 2020
+Grading at Sun May 17 14:46:41 UTC 2020
 Running 'make clean' to do a clean build of your project
 rm -rf *.o poker *~
 Running 'make poker OTHERFLAGS=-O3' to build your project
@@ -16,14 +16,14 @@ Running a simulation with 20000 draws for 2 hands...
     Test case passed!    
 Running a simulation with 25000 draws for 3 hands...
     Hand 0 was close enough to our answer
- ** Hand 1 differed from our answer by 63.05%
- ** Hand 2 differed from our answer by -62.02%
-*** Test case failed ***
+    Hand 1 was close enough to our answer
+    Hand 2 was close enough to our answer
+    Test case passed!    
 Running a simulation with 25000 draws for 3 hands...
     Hand 0 was close enough to our answer
- ** Hand 1 differed from our answer by 5.68%
- ** Hand 2 differed from our answer by -5.30%
-*** Test case failed ***
+    Hand 1 was close enough to our answer
+    Hand 2 was close enough to our answer
+    Test case passed!    
 Running a simulation with 25000 draws for 2 hands...
     Hand 0 was close enough to our answer
     Hand 1 was close enough to our answer
@@ -45,17 +45,17 @@ Running a simulation with 30000 draws for 2 hands...
     Test case passed!    
 Running a simulation with 40000 draws for 3 hands...
     Hand 0 was close enough to our answer
- ** Hand 1 differed from our answer by 26.00%
- ** Hand 2 differed from our answer by -26.30%
-*** Test case failed ***
+    Hand 1 was close enough to our answer
+    Hand 2 was close enough to our answer
+    Test case passed!    
  - Then one from a completely made up poker variant
 Running a simulation with 100000 draws for 6 hands...
     Hand 0 was close enough to our answer
- ** Hand 1 differed from our answer by 3.40%
- ** Hand 2 differed from our answer by 9.08%
- ** Hand 3 differed from our answer by 4.70%
- ** Hand 4 differed from our answer by 29.20%
- ** Hand 5 differed from our answer by -46.20%
-*** Test case failed ***
+    Hand 1 was close enough to our answer
+    Hand 2 was close enough to our answer
+    Hand 3 was close enough to our answer
+    Hand 4 was close enough to our answer
+    Hand 5 was close enough to our answer
+    Test case passed!    
 
-Overall Grade: F
+Overall Grade: A
